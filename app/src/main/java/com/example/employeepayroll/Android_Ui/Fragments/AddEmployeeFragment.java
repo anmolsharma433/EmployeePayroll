@@ -1,9 +1,11 @@
 package com.example.employeepayroll.Android_Ui.Fragments;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -24,6 +26,7 @@ public class AddEmployeeFragment extends Fragment {
     CheckBox vehicle,commOrFixed;
     RadioButton car,motorcycle,fullTime,partTime,intern;
     ImageView vehicleImg;
+    Button savePayroll;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -46,11 +49,11 @@ public class AddEmployeeFragment extends Fragment {
         vehicleImg = view.findViewById(R.id.vehicle_Image);
         car = view.findViewById(R.id.rbCar);
         motorcycle = view.findViewById(R.id.rbMotorcycle);
-        //commorfixed = view.findViewById(R.id.edtCommissionPerOrFixedAmt);
         fullTime = view.findViewById(R.id.rbFulltime);
         partTime = view.findViewById(R.id.rbParttime);
         intern = view.findViewById(R.id.rbIntern);
         commOrFixed = view.findViewById(R.id.chkFixedOrCommission);
+        savePayroll = view.findViewById(R.id.btnSavePayroll);
 
         //hiding the Fields on startup
         vehicleType.setVisibility(View.GONE);
@@ -64,7 +67,6 @@ public class AddEmployeeFragment extends Fragment {
         bonus.setVisibility(View.GONE);
         vehicleImg.setVisibility(View.GONE);
         commOrFixed.setVisibility(View.GONE);
-        //commorfixed.setVisibility(View.GONE);
 
         //Showing the Vehicle properties on Vehicle Checkbox
         vehicle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -77,6 +79,20 @@ public class AddEmployeeFragment extends Fragment {
                     model.setVisibility(View.VISIBLE);
                     plate.setVisibility(View.VISIBLE);
                     vehicleImg.setVisibility(View.VISIBLE);
+
+                    vehicleType.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                        @Override
+                        public void onCheckedChanged(RadioGroup group, int checkedId) {
+                            if(car.isChecked())
+                            {
+                                vehicleImg.setImageResource(R.drawable.car);
+                            }
+                            else if (motorcycle.isChecked())
+                            {
+                                vehicleImg.setImageResource(R.drawable.motorcycle);
+                            }
+                        }
+                    });
                 }
                 else
                 {
@@ -120,10 +136,15 @@ public class AddEmployeeFragment extends Fragment {
                 }
 
                 //if full time is checked
-
+                if(fullTime.isChecked())
+                {
+                    salary.setVisibility(View.VISIBLE);
+                    bonus.setVisibility(View.VISIBLE);
+                }
             }
         });
 
+        //getting the value from fields
 
 
 
