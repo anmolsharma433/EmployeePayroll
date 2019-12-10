@@ -74,8 +74,8 @@ public class Navigation_menu extends AppCompatActivity implements NavigationView
                 Toast.makeText(this,"We are happy to help You.",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.navLogout:
-                //Intent intent = new Intent(Navigation_menu.this,LogIn.class);
-                //startActivity(intent);
+                Intent intent = new Intent(Navigation_menu.this,LogIn.class);
+                startActivity(intent);
                 Toast.makeText(this,"you are successfully logged out",Toast.LENGTH_SHORT).show();
                 break;
         }
