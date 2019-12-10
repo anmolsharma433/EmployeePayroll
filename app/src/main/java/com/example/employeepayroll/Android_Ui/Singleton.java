@@ -33,4 +33,11 @@ public class Singleton {
         }
         return null;
     }
+
+    public int returnCount()
+    {
+        return employeeArrayList.size();
+    }
+
+
 }
