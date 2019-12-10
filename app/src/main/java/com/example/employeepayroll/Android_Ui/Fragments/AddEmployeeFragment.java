@@ -76,11 +76,14 @@ public class AddEmployeeFragment extends Fragment {
                         ly_partTime.setVisibility(View.GONE);
                         ly_fulltime.setVisibility(View.GONE);
                         ly_intern.setVisibility(View.VISIBLE);
+                        break;
 
                     case R.id.rbFulltime:
                         ly_partTime.setVisibility(View.GONE);
                         ly_fulltime.setVisibility(View.VISIBLE);
                         ly_intern.setVisibility(View.GONE);
+                        break;
+
 
                 }
             }
@@ -88,6 +91,15 @@ public class AddEmployeeFragment extends Fragment {
 
 
         //getting the value from fields
+        String empid = String.valueOf(id.getText());
+        String empname = String.valueOf(name.getText());
+        String empEmail = String.valueOf(email.getText());
+        String empHours = String.valueOf(hoursworked.getText());
+        String emprate = String.valueOf(rate.getText());
+        String emprateCommissionper = String.valueOf(ratemcommissionPer.getText());
+        String empschool = String.valueOf(school.getText());
+        String empsalary = String.valueOf(salary.getText());
+        String empbonus = String.valueOf(bonus.getText());
 
 
 
