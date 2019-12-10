@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,7 +19,7 @@ import androidx.fragment.app.Fragment;
 import com.example.employeepayroll.R;
 
 public class AddEmployeeFragment extends Fragment {
-    EditText id,name,email,dob,model,plate,hoursworked,ratemcommissionPer,school,salary,bonus,commorfixed;
+    EditText id,name,email,dob,model,plate,hoursworked,rate,ratemcommissionPer,school,salary,bonus,commorfixed;
     RadioGroup employeeType,vehicleType;
     CheckBox vehicle,commOrFixed;
     RadioButton car,motorcycle,fullTime,partTime,intern;
@@ -34,7 +35,8 @@ public class AddEmployeeFragment extends Fragment {
         model =view.findViewById(R.id.edtModel);
         plate = view.findViewById(R.id.edtPlate);
         hoursworked = view.findViewById(R.id.edtHours);
-        ratemcommissionPer = view.findViewById(R.id.edtRate);
+        rate = view.findViewById(R.id.edtRate);
+        ratemcommissionPer = view.findViewById(R.id.edtCommissionPerOrFixedAmt);
         school = view.findViewById(R.id.edtSchoolName);
         salary = view.findViewById(R.id.edtSalary);
         bonus = view.findViewById(R.id.edtBonus);
@@ -44,7 +46,7 @@ public class AddEmployeeFragment extends Fragment {
         vehicleImg = view.findViewById(R.id.vehicle_Image);
         car = view.findViewById(R.id.rbCar);
         motorcycle = view.findViewById(R.id.rbMotorcycle);
-        commorfixed = view.findViewById(R.id.edtCommissionPerOrFixedAmt);
+        //commorfixed = view.findViewById(R.id.edtCommissionPerOrFixedAmt);
         fullTime = view.findViewById(R.id.rbFulltime);
         partTime = view.findViewById(R.id.rbParttime);
         intern = view.findViewById(R.id.rbIntern);
@@ -55,13 +57,14 @@ public class AddEmployeeFragment extends Fragment {
         model.setVisibility(View.GONE);
         plate.setVisibility(View.GONE);
         hoursworked.setVisibility(View.GONE);
+        rate.setVisibility(View.GONE);
         ratemcommissionPer.setVisibility(View.GONE);
         school.setVisibility(View.GONE);
         salary.setVisibility(View.GONE);
         bonus.setVisibility(View.GONE);
         vehicleImg.setVisibility(View.GONE);
         commOrFixed.setVisibility(View.GONE);
-        commorfixed.setVisibility(View.GONE);
+        //commorfixed.setVisibility(View.GONE);
 
         //Showing the Vehicle properties on Vehicle Checkbox
         vehicle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -84,6 +87,31 @@ public class AddEmployeeFragment extends Fragment {
 
                 }
 
+            }
+        });
+
+        //RadioButton group Employee Type
+        employeeType.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int i) {
+                if(partTime.isChecked())
+                {
+                    hoursworked.setVisibility(View.VISIBLE);
+                    rate.setVisibility(View.VISIBLE);
+                    commOrFixed.setVisibility(View.VISIBLE);
+                    commOrFixed.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                        @Override
+                        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                            if(commOrFixed.isChecked())
+                            ratemcommissionPer.setVisibility(View.VISIBLE);
+                            else
+                                ratemcommissionPer.setVisibility(View.GONE);
+                        }
+
+
+                    });
+
+                }
             }
         });
 
