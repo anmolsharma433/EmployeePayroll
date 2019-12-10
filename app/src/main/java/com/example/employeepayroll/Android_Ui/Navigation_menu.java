@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import com.example.employeepayroll.Android_Ui.Fragments.AddEmployeeFragment;
 import com.example.employeepayroll.Android_Ui.Fragments.HomeFragment;
-import com.example.employeepayroll.Android_Ui.Fragments.ViewEmployeeFragment;
+import com.example.employeepayroll.Android_Ui.Fragments.ViewEmployeeListFragment;
 import com.example.employeepayroll.R;
 import com.google.android.material.navigation.NavigationView;
 
@@ -67,7 +67,7 @@ public class Navigation_menu extends AppCompatActivity implements NavigationView
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer,new AddEmployeeFragment()).commit();
                 break;
             case R.id.navViewEmployee:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer,new ViewEmployeeFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer,new ViewEmployeeListFragment()).commit();
                 break;
             case R.id.navHelp:
                 //dialog box yet to be added
