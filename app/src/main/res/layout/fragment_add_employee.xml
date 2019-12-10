@@ -12,36 +12,293 @@
             android:id="@+id/linearlayout_addemployee"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="">
+            android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="15dp"
-            android:elevation="10dp"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/addEmployee"/>
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                android:visibility="visible"
+                android:layout_marginTop="15dp"
+                android:elevation="10dp"
+                android:src="@drawable/add_employee" />
 
-            <androidx.cardview.widget.CardView
+
+            <EditText
+                android:id="@+id/edtId"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginLeft="5dp"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="5dp"
-                android:background="@color/cardview_dark_background"
-                android:layout_marginRight="10dp">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="Enter Employee Id"
+                android:inputType="number" />
 
             <EditText
                 android:id="@+id/edtName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:hint="Enter Name" />
+                android:layout_marginRight="10dp"
+                android:hint="Enter Name"
+                android:inputType="number" />
 
-            </androidx.cardview.widget.CardView>
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="Enter Email"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/edtDob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="Enter Date Of Birth"
+                android:inputType="number" />
+
+            <CheckBox
+                android:id="@+id/chkVehicle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="Check If You Have Vehicle" />
+
+            <LinearLayout
+                android:id="@+id/linear_vehicle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:id="@+id/rgbVehicle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp">
+
+                    <RadioButton
+                        android:id="@+id/rbCar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:layout_weight="1"
+                        android:text="Car" />
+
+                    <RadioButton
+                        android:id="@+id/rbMotorcycle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="5"
+                        android:text="Motorcycle" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/vehicle_Info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:id="@+id/vehicle_Image"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="30dp"
+                    android:src="@mipmap/ic_launcher_round"/>
+
+                <EditText
+                    android:id="@+id/edtModel"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="50dp"
+                    android:layout_toRightOf="@+id/imageView"
+                    android:hint="Enter model" />
+
+                <EditText
+                    android:id="@+id/edtPlate"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/edtModel"
+                    android:layout_marginEnd="50dp"
+                    android:hint="Enter plate number" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:text="Select Employee Type"/>
+
+            <LinearLayout
+                android:id="@+id/linear_Employee_Type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+
+
+                <RadioGroup
+                    android:id="@+id/rgbEmployeeType"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp">
+
+                    <RadioButton
+                        android:id="@+id/rbParttime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:layout_weight="1"
+                        android:text="Part time" />
+
+                    <RadioButton
+                        android:id="@+id/rbIntern"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:layout_weight="1"
+                        android:text="Intern" />
+
+                    <RadioButton
+                        android:id="@+id/rbFulltime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:layout_weight="1"
+                        android:text="Full time" />
+                </RadioGroup>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/linear_Part_Time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/edtHours"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Hours worked"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <EditText
+                    android:id="@+id/edtRate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="Rate"/>
+
+                <CheckBox
+                    android:id="@+id/chkFixedOrCommission"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:text="Check if you are fixed based part time employee" />
+
+                <LinearLayout
+                    android:id="@+id/linearFixedOrCommission"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/edtCommissionPerOrFixedAmt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:hint="Commission Percentage fixed amount"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearIntern"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/edtSchoolName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="School Name"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearFulltime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <EditText
+                    android:id="@+id/edtSalary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Salary"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <EditText
+                    android:id="@+id/edtBonus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="Bonus"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnSavePayroll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:tooltipText="Add Emoloyee"
+                android:text="Save Payroll"
+                android:layout_marginBottom="60dp"/>
+
+
         </LinearLayout>
     </ScrollView>
 
