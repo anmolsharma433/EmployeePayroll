@@ -10,6 +10,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -27,6 +28,7 @@ public class AddEmployeeFragment extends Fragment {
     RadioButton car,motorcycle,fullTime,partTime,intern;
     ImageView vehicleImg;
     Button savePayroll;
+    LinearLayout ly_partTime,ly_intern,ly_fulltime;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -35,114 +37,55 @@ public class AddEmployeeFragment extends Fragment {
         name = view.findViewById(R.id.edtName);
         email = view.findViewById(R.id.etEmail);
         dob = view.findViewById(R.id.edtDob);
-        model =view.findViewById(R.id.edtModel);
-        plate = view.findViewById(R.id.edtPlate);
         hoursworked = view.findViewById(R.id.edtHours);
         rate = view.findViewById(R.id.edtRate);
         ratemcommissionPer = view.findViewById(R.id.edtCommissionPerOrFixedAmt);
         school = view.findViewById(R.id.edtSchoolName);
         salary = view.findViewById(R.id.edtSalary);
         bonus = view.findViewById(R.id.edtBonus);
-        vehicleType = view.findViewById(R.id.rgbVehicle);
         employeeType =view.findViewById(R.id.rgbEmployeeType);
-        vehicle = view.findViewById(R.id.chkVehicle);
-        vehicleImg = view.findViewById(R.id.vehicle_Image);
-        car = view.findViewById(R.id.rbCar);
-        motorcycle = view.findViewById(R.id.rbMotorcycle);
         fullTime = view.findViewById(R.id.rbFulltime);
         partTime = view.findViewById(R.id.rbParttime);
         intern = view.findViewById(R.id.rbIntern);
         commOrFixed = view.findViewById(R.id.chkFixedOrCommission);
         savePayroll = view.findViewById(R.id.btnSavePayroll);
+        ly_partTime = view.findViewById(R.id.linear_Part_Time);
+        ly_intern =view.findViewById(R.id.linearIntern);
+        ly_fulltime = view.findViewById(R.id.linearFulltime);
+
 
         //hiding the Fields on startup
-        vehicleType.setVisibility(View.GONE);
-        model.setVisibility(View.GONE);
-        plate.setVisibility(View.GONE);
-        hoursworked.setVisibility(View.GONE);
-        rate.setVisibility(View.GONE);
-        ratemcommissionPer.setVisibility(View.GONE);
-        school.setVisibility(View.GONE);
-        salary.setVisibility(View.GONE);
-        bonus.setVisibility(View.GONE);
-        vehicleImg.setVisibility(View.GONE);
-        commOrFixed.setVisibility(View.GONE);
-
-        //Showing the Vehicle properties on Vehicle Checkbox
-        vehicle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
-                if(vehicle.isChecked())
-                {
-                    vehicleType.setVisibility(View.VISIBLE);
-                    model.setVisibility(View.VISIBLE);
-                    plate.setVisibility(View.VISIBLE);
-                    vehicleImg.setVisibility(View.VISIBLE);
-
-                    vehicleType.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                        @Override
-                        public void onCheckedChanged(RadioGroup group, int checkedId) {
-                            if(car.isChecked())
-                            {
-                                vehicleImg.setImageResource(R.drawable.car);
-                            }
-                            else if (motorcycle.isChecked())
-                            {
-                                vehicleImg.setImageResource(R.drawable.motorcycle);
-                            }
-                        }
-                    });
-                }
-                else
-                {
-                    vehicleType.setVisibility(View.GONE);
-                    model.setVisibility(View.GONE);
-                    plate.setVisibility(View.GONE);
-                    vehicleImg.setVisibility(View.GONE);
-
-                }
-
-            }
-        });
+        ly_partTime.setVisibility(View.GONE);
+        ly_fulltime.setVisibility(View.GONE);
+        ly_intern.setVisibility(View.GONE);
 
         //RadioButton group Employee Type
         employeeType.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int i) {
-                if(partTime.isChecked())
+            public void onCheckedChanged(RadioGroup group, int i)
+            {
+                switch (i)
                 {
-                    hoursworked.setVisibility(View.VISIBLE);
-                    rate.setVisibility(View.VISIBLE);
-                    commOrFixed.setVisibility(View.VISIBLE);
-                    commOrFixed.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                        @Override
-                        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                            if(commOrFixed.isChecked())
-                            ratemcommissionPer.setVisibility(View.VISIBLE);
-                            else
-                                ratemcommissionPer.setVisibility(View.GONE);
-                        }
+                    case R.id.rbParttime:
+                        ly_partTime.setVisibility(View.VISIBLE);
+                        ly_fulltime.setVisibility(View.GONE);
+                        ly_intern.setVisibility(View.GONE);
+                        break;
 
+                    case R.id.rbIntern:
+                        ly_partTime.setVisibility(View.GONE);
+                        ly_fulltime.setVisibility(View.GONE);
+                        ly_intern.setVisibility(View.VISIBLE);
 
-                    });
+                    case R.id.rbFulltime:
+                        ly_partTime.setVisibility(View.GONE);
+                        ly_fulltime.setVisibility(View.VISIBLE);
+                        ly_intern.setVisibility(View.GONE);
 
-                }
-
-                //if intern is checked
-                if(intern.isChecked())
-                {
-                    school.setVisibility(View.VISIBLE);
-                }
-
-                //if full time is checked
-                if(fullTime.isChecked())
-                {
-                    salary.setVisibility(View.VISIBLE);
-                    bonus.setVisibility(View.VISIBLE);
                 }
             }
         });
+
 
         //getting the value from fields
 
