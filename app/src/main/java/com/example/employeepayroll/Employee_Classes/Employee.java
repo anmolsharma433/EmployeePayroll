@@ -7,6 +7,7 @@ import com.google.gson.annotations.SerializedName;
 import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 public  class Employee{
 
@@ -21,7 +22,7 @@ public  class Employee{
     @Expose
     private int age;
 
-    public Vehicle vehicle;
+    public List<Vehicle> vehicle;
 
     //constructor
 
@@ -61,12 +62,16 @@ public  class Employee{
     }
 
 
-    public Vehicle getVehicle() {
+    public List<Vehicle> getVehicle() {
         return vehicle;
     }
 
-    public void setVehicle(Vehicle vehicle) {
+    public void setVehicle(List<Vehicle> vehicle) {
         this.vehicle = vehicle;
+    }
+
+    public void setmyVehicle(Vehicle vehicle) {
+        this.vehicle.add(vehicle);
     }
 
     public  double calEarnings()
