@@ -4,7 +4,7 @@ import com.example.employeepayroll.Employee_Classes.Employee;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public abstract class PartTime extends Employee {
+public class PartTime extends Employee {
 
 
     // create variables for Storing values
