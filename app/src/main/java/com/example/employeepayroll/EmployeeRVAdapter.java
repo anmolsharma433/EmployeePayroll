@@ -3,14 +3,17 @@ package com.example.employeepayroll;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.employeepayroll.Android_Ui.DetailsEmployeeActivity;
 import com.example.employeepayroll.Employee_Classes.Employee;
 
 import java.util.List;
@@ -59,6 +62,16 @@ public class EmployeeRVAdapter extends RecyclerView.Adapter<EmployeeRVAdapter.Vi
         holder.name.setText("Employee Name: " + mydata.getName());
         holder.id.setText("Employee ID: " + String.valueOf(mydata.getEmployeeId()));
 
+        holder.mylAYOUT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myintent = new Intent(context, DetailsEmployeeActivity.class);
+                myintent.putExtra("empobject", mydata);
+                context.startActivity(myintent);
+
+            }
+        });
+
 
     }
 
@@ -72,11 +85,14 @@ public class EmployeeRVAdapter extends RecyclerView.Adapter<EmployeeRVAdapter.Vi
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView name, age, id;
+        LinearLayout mylAYOUT;
 
         public ViewHolder(@NonNull View itemView) {
 
 
             super(itemView);
+
+            mylAYOUT = itemView.findViewById(R.id.parent_layout);
 
             id = itemView.findViewById(R.id.empid);
             name = itemView.findViewById(R.id.empname);

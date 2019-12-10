@@ -15,10 +15,13 @@ public  class CommisionBasedPartTime extends PartTime{
     int commisionPercentage;
 
     // constructor to input all values
+    public CommisionBasedPartTime(){
+
+    }
 
 
-    public CommisionBasedPartTime(int employeeId, String name, int age, float rate, int hoursWorked, int commisionPercentage) {
-        super(employeeId, name, age, rate, hoursWorked);
+    public CommisionBasedPartTime(int employeeId, String name, int age, String type,float rate, int hoursWorked, int commisionPercentage) {
+        super(employeeId, name, age, type,rate, hoursWorked);
         this.commisionPercentage = commisionPercentage;
     }
 

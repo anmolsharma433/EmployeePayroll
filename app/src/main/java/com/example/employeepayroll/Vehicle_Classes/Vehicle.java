@@ -1,11 +1,16 @@
 package com.example.employeepayroll.Vehicle_Classes;
 
+import android.annotation.SuppressLint;
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class Vehicle  {
+@SuppressLint("ParcelCreator")
+public class Vehicle implements Parcelable {
     @SerializedName("make")
     @Expose
     private String make;
@@ -33,6 +38,40 @@ public class Vehicle  {
     public Vehicle(){
 
     }
+
+    protected Vehicle(Parcel in) {
+        make = in.readString();
+        plate = in.readString();
+        model = in.readString();
+        insurance = in.readByte() != 0;
+        type = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(make);
+        dest.writeString(plate);
+        dest.writeString(model);
+        dest.writeByte((byte) (insurance ? 1 : 0));
+        dest.writeString(type);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<Vehicle> CREATOR = new Creator<Vehicle>() {
+        @Override
+        public Vehicle createFromParcel(Parcel in) {
+            return new Vehicle(in);
+        }
+
+        @Override
+        public Vehicle[] newArray(int size) {
+            return new Vehicle[size];
+        }
+    };
 
     public String getType() {
         return type;

@@ -1,9 +1,386 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    android:orientation="vertical"
     tools:context=".Android_Ui.DetailsEmployeeActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/detailtext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Detail of Employee"
+        android:textAlignment="center"
+        android:textColor="#050000"
+        android:textSize="20dp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Employee ID"
+            android:textColor="#94030303"
+            android:textSize="15dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/textEmpID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Employee ID"
+            android:textColor="@android:color/background_dark"
+            android:textSize="15dp">
+
+        </TextView>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Employee Name"
+            android:textColor="#94000000"
+            android:textSize="15dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/textEmpName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="emp Name"
+            android:textColor="@android:color/background_dark"
+            android:textSize="15dp">
+
+        </TextView>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Employee Age"
+            android:textColor="#94000000"
+            android:textSize="15dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/textEmpAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Customer Age"
+            android:textColor="@android:color/background_dark"
+            android:textSize="15dp">
+
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Employee Type"
+            android:textColor="#940A0A0A"
+            android:textSize="15dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/textEmptype"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="type"
+            android:textColor="@android:color/background_dark"
+            android:textSize="15dp">
+
+        </TextView>
+
+    </LinearLayout>
+
+
+    // custom layout starts from here
+
+
+    <LinearLayout
+        android:id="@+id/layoutintern"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Employee School"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/textEmpschool"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="school"
+                android:textColor="@android:color/background_dark"
+                android:textSize="15dp">
+
+            </TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    // second custom layout for full time
+
+    <LinearLayout
+        android:id="@+id/layoutfulltime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Salary and Bonus"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/textEmpsalaryfulltime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="salary"
+                android:textColor="@android:color/background_dark"
+                android:textSize="15dp">
+
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Total Salary"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/textEmptotalsalaryftime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="school"
+                android:textColor="@android:color/background_dark"
+                android:textSize="15dp">
+
+            </TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    // third custom layout for parttime
+
+    <LinearLayout
+        android:id="@+id/layoutparttime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Salary Description"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/textEmpsalaryparttime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="salary"
+                android:textColor="@android:color/background_dark"
+                android:textSize="15dp">
+
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Commision"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/textEmpcommisionptime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="school"
+                android:textColor="@android:color/background_dark"
+                android:textSize="15dp">
+
+            </TextView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Total Salary"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/textEmptotalsalaryptime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="school"
+                android:textColor="@android:color/background_dark"
+                android:textSize="15dp">
+
+            </TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/detailtext1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#30B3D608"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="List of Employee's Vehicles"
+        android:textAlignment="center"
+        android:textColor="#221F1F"
+        android:textSize="20dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_vehicle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/design_default_color_on_primary"
+        >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

@@ -9,9 +9,12 @@ public final class FixedBasedPartTime extends PartTime {
     @SerializedName("fixedAmount")
     @Expose
     int fixedAmount;
+    public  FixedBasedPartTime(){
 
-    public FixedBasedPartTime(int employeeId, String name, int age, float rate, int hoursWorked, int fixedAmount) {
-        super(employeeId, name, age, rate, hoursWorked);
+    }
+
+    public FixedBasedPartTime(int employeeId, String name, int age, String type,float rate, int hoursWorked, int fixedAmount) {
+        super(employeeId, name, age,type, rate, hoursWorked);
         this.fixedAmount = fixedAmount;
     }
 

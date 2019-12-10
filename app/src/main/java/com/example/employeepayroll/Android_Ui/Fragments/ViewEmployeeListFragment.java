@@ -49,41 +49,42 @@ public class ViewEmployeeListFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        JasonParsing jasonParsing = new JasonParsing();
-        json = jasonParsing.loadJSONFromAsset(getContext());
-
-        Gson gson = new Gson();
-
-        try {
-            JSONArray jsonarray = new JSONArray(json);
-
-            for(int i =0 ; i<=jsonarray.length();i++)
-            {
-
-                temps = jsonarray.get(i).toString();
-                Employee employee = gson.fromJson(temps,Employee.class);
-                myobj.addEmployee(employee);
-
-//                List<Vehicle> myvehicles = employee.getVehicle();
-//                for
+//        JasonParsing jasonParsing = new JasonParsing();
+//        json = jasonParsing.loadJSONFromAsset(getContext());
 //
-//                Vehicle vehicleData = gson.fromJson(temps,Vehicle.class);
-//                myobj.addVehicle(vehicleData);
-
-
-
-            }
-        }catch (JSONException e) {
-
-            initRecycleView();
-        }
-
+//        Gson gson = new Gson();
+//
+//        try {
+//            JSONArray jsonarray = new JSONArray(json);
+//
+//            for(int i =0 ; i<=jsonarray.length();i++)
+//            {
+//
+//                temps = jsonarray.get(i).toString();
+//                Employee employee = gson.fromJson(temps,Employee.class);
+//                myobj.addEmployee(employee);
+//
+////                List<Vehicle> myvehicles = employee.getVehicle();
+////                for
+////
+////                Vehicle vehicleData = gson.fromJson(temps,Vehicle.class);
+////                myobj.addVehicle(vehicleData);
+//
+//
+//
+//            }
+//        }catch (JSONException e) {
+//
+//            initRecycleView();
+//        }
+initRecycleView();
 
     }
 
     private  void initRecycleView()
     {
 
+        myobj.create();
 
         RecyclerView recyclerView = getView().findViewById(R.id.employee_rv);
         ArrayList<Employee> mylist = myobj.getEmployees();
