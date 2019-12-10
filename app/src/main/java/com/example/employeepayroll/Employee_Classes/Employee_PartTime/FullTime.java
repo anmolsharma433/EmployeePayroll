@@ -1,12 +1,16 @@
 package com.example.employeepayroll.Employee_Classes.Employee_PartTime;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.example.employeepayroll.Employee_Classes.Employee;
+import com.example.employeepayroll.Employee_Classes.EmployeeType_partTime.FixedBasedPartTime;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public final class FullTime extends Employee implements Serializable {
+public final class FullTime extends Employee implements Parcelable {
 
     // create variables for stroing values
     @SerializedName("salary")
@@ -18,10 +22,15 @@ public final class FullTime extends Employee implements Serializable {
     int bonus;
 
     // constructor to input all values
+    public FullTime()
+    {
+
+    }
 
 
-    public FullTime(int employeeId, String name, int age, int salary, int bonus) {
-        super(employeeId, name, age);
+
+    public FullTime(int employeeId, String name, int age, String type, int salary, int bonus) {
+        super(employeeId, name, age, type);
         this.salary = salary;
         this.bonus = bonus;
     }
