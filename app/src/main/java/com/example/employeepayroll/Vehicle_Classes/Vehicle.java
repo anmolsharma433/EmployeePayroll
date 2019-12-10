@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public abstract class Vehicle  {
+public class Vehicle  {
     @SerializedName("make")
     @Expose
     private String make;
@@ -28,6 +28,10 @@ public abstract class Vehicle  {
         this.model = model;
         this.insurance = insurance;
         this.type = type;
+    }
+
+    public Vehicle(){
+
     }
 
     public String getType() {

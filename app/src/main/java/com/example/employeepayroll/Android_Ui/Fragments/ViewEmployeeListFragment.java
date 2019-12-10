@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.employeepayroll.Android_Ui.Singleton;
+import com.example.employeepayroll.EmployeeRVAdapter;
 import com.example.employeepayroll.Employee_Classes.Employee;
 import com.example.employeepayroll.JasonParsing;
 import com.example.employeepayroll.R;
@@ -29,6 +30,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ViewEmployeeListFragment extends Fragment {
     String json,temps;
@@ -38,10 +40,17 @@ public class ViewEmployeeListFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_view_employee,container,false);
+        View view = inflater.inflate(R.layout.fragment_view_employee, container, false);
+
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         JasonParsing jasonParsing = new JasonParsing();
-        json = jasonParsing.loadJSONFromAsset(this);
+        json = jasonParsing.loadJSONFromAsset(getContext());
 
         Gson gson = new Gson();
 
@@ -55,8 +64,11 @@ public class ViewEmployeeListFragment extends Fragment {
                 Employee employee = gson.fromJson(temps,Employee.class);
                 myobj.addEmployee(employee);
 
-                Vehicle vehicleData = gson.fromJson(temps,Vehicle.class);
-                myobj.addVehicle(vehicleData);
+//                List<Vehicle> myvehicles = employee.getVehicle();
+//                for
+//
+//                Vehicle vehicleData = gson.fromJson(temps,Vehicle.class);
+//                myobj.addVehicle(vehicleData);
 
 
 
@@ -73,17 +85,20 @@ public class ViewEmployeeListFragment extends Fragment {
     {
 
 
-        RecyclerView recyclerView = findViewById(R.id.employee_rv);
-        ArrayList<EmployeeData> mylist = myobj.returnemplst();
-        EmployeeRVAdapter employeeRVAdapter = new EmployeeRVAdapter(mylist,this);
+        RecyclerView recyclerView = getView().findViewById(R.id.employee_rv);
+        ArrayList<Employee> mylist = myobj.getEmployees();
+        EmployeeRVAdapter employeeRVAdapter = new EmployeeRVAdapter(getActivity());
+        employeeRVAdapter.setMyaaraylist(mylist);
         recyclerView.setAdapter(employeeRVAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
 
 
 
     }
-
-        return view;
     }
-}
+
+
+
+
+

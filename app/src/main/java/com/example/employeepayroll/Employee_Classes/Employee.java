@@ -12,7 +12,7 @@ import java.util.List;
 public  class Employee{
 
     //declare variables
-    @SerializedName("employeeid")
+    @SerializedName("id")
     @Expose
     private int employeeId;
     @SerializedName("name")

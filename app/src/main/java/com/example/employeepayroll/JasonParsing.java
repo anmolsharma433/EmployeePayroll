@@ -11,7 +11,7 @@ public class JasonParsing {
         String json = null;
         try {
 
-            InputStream is = context.getAssets().open("userdata.jason");
+            InputStream is = context.getAssets().open("userdata.json");
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);
