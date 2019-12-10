@@ -22,13 +22,14 @@ import androidx.fragment.app.Fragment;
 import com.example.employeepayroll.R;
 
 public class AddEmployeeFragment extends Fragment {
-    EditText id,name,email,dob,model,plate,hoursworked,rate,ratemcommissionPer,school,salary,bonus,commorfixed;
+    EditText id,name,email,Age,model,plate,hoursworked,rate,ratemcommissionPer,school,salary,bonus,commorfixed;
     RadioGroup employeeType,vehicleType;
     CheckBox vehicle,commOrFixed;
     RadioButton car,motorcycle,fullTime,partTime,intern;
     ImageView vehicleImg;
     Button savePayroll;
     LinearLayout ly_partTime,ly_intern,ly_fulltime;
+    String empType;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -36,7 +37,7 @@ public class AddEmployeeFragment extends Fragment {
         id  = view.findViewById(R.id.edtId);
         name = view.findViewById(R.id.edtName);
         email = view.findViewById(R.id.etEmail);
-        dob = view.findViewById(R.id.edtDob);
+        Age = view.findViewById(R.id.edtDob);
         hoursworked = view.findViewById(R.id.edtHours);
         rate = view.findViewById(R.id.edtRate);
         ratemcommissionPer = view.findViewById(R.id.edtCommissionPerOrFixedAmt);
@@ -70,18 +71,21 @@ public class AddEmployeeFragment extends Fragment {
                         ly_partTime.setVisibility(View.VISIBLE);
                         ly_fulltime.setVisibility(View.GONE);
                         ly_intern.setVisibility(View.GONE);
+                        empType = "Part Time";
                         break;
 
                     case R.id.rbIntern:
                         ly_partTime.setVisibility(View.GONE);
                         ly_fulltime.setVisibility(View.GONE);
                         ly_intern.setVisibility(View.VISIBLE);
+                        empType = "Intern";
                         break;
 
                     case R.id.rbFulltime:
                         ly_partTime.setVisibility(View.GONE);
                         ly_fulltime.setVisibility(View.VISIBLE);
                         ly_intern.setVisibility(View.GONE);
+                        empType = "Full Time";
                         break;
 
 
@@ -94,12 +98,24 @@ public class AddEmployeeFragment extends Fragment {
         String empid = String.valueOf(id.getText());
         String empname = String.valueOf(name.getText());
         String empEmail = String.valueOf(email.getText());
+        String empAge = String.valueOf(Age.getText());
         String empHours = String.valueOf(hoursworked.getText());
         String emprate = String.valueOf(rate.getText());
         String emprateCommissionper = String.valueOf(ratemcommissionPer.getText());
         String empschool = String.valueOf(school.getText());
         String empsalary = String.valueOf(salary.getText());
         String empbonus = String.valueOf(bonus.getText());
+
+        savePayroll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(empType == "Part Time")
+
+                {
+
+                }
+            }
+        });
 
 
 
