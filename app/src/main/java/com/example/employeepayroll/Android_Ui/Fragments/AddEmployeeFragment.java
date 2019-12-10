@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -50,6 +51,7 @@ public class AddEmployeeFragment extends Fragment {
         commOrFixed = view.findViewById(R.id.chkFixedOrCommission);
 
         //hiding the Fields on startup
+        vehicleType.setVisibility(View.GONE);
         model.setVisibility(View.GONE);
         plate.setVisibility(View.GONE);
         hoursworked.setVisibility(View.GONE);
@@ -62,7 +64,28 @@ public class AddEmployeeFragment extends Fragment {
         commorfixed.setVisibility(View.GONE);
 
         //Showing the Vehicle properties on Vehicle Checkbox
+        vehicle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
+                if(vehicle.isChecked())
+                {
+                    vehicleType.setVisibility(View.VISIBLE);
+                    model.setVisibility(View.VISIBLE);
+                    plate.setVisibility(View.VISIBLE);
+                    vehicleImg.setVisibility(View.VISIBLE);
+                }
+                else
+                {
+                    vehicleType.setVisibility(View.GONE);
+                    model.setVisibility(View.GONE);
+                    plate.setVisibility(View.GONE);
+                    vehicleImg.setVisibility(View.GONE);
+
+                }
+
+            }
+        });
 
 
 
