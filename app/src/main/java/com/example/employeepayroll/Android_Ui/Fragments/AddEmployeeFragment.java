@@ -19,6 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.employeepayroll.Employee_Classes.EmployeeType_partTime.PartTime;
 import com.example.employeepayroll.R;
 
 public class AddEmployeeFragment extends Fragment {
@@ -95,12 +96,12 @@ public class AddEmployeeFragment extends Fragment {
 
 
         //getting the value from fields
-        String empid = String.valueOf(id.getText());
-        String empname = String.valueOf(name.getText());
+        final String empid = String.valueOf(id.getText());
+        final String empname = String.valueOf(name.getText());
         String empEmail = String.valueOf(email.getText());
-        String empAge = String.valueOf(Age.getText());
-        String empHours = String.valueOf(hoursworked.getText());
-        String emprate = String.valueOf(rate.getText());
+        final String empAge = String.valueOf(Age.getText());
+        final String empHours = String.valueOf(hoursworked.getText());
+        final String emprate = String.valueOf(rate.getText());
         String emprateCommissionper = String.valueOf(ratemcommissionPer.getText());
         String empschool = String.valueOf(school.getText());
         String empsalary = String.valueOf(salary.getText());
@@ -110,9 +111,8 @@ public class AddEmployeeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if(empType == "Part Time")
-
                 {
-
+                    PartTime partTime = new PartTime(Integer.parseInt(empid),empname,Integer.parseInt(empAge),Integer.parseInt(emprate),Integer.parseInt(empHours));
                 }
             }
         });
