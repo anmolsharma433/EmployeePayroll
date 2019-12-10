@@ -112,8 +112,19 @@ public class AddEmployeeFragment extends Fragment {
                     });
 
                 }
+
+                //if intern is checked
+                if(intern.isChecked())
+                {
+                    school.setVisibility(View.VISIBLE);
+                }
+
+                //if full time is checked
+
             }
         });
+
+
 
 
 
