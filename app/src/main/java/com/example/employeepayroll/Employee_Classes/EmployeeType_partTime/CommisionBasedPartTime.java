@@ -1,19 +1,24 @@
 package com.example.employeepayroll.Employee_Classes.EmployeeType_partTime;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 
-public final class CommisionBasedPartTime extends PartTime implements Serializable {
+public  class CommisionBasedPartTime extends PartTime{
 
 
     // create variables for stroing values
+    @SerializedName("commissionPercent")
+    @Expose
 
     int commisionPercentage;
 
     // constructor to input all values
 
 
-    public CommisionBasedPartTime(String employeeName, int employeeAge, float rate, int hoursWorked, int commisionPercentage) {
-        super(employeeName, employeeAge, rate, hoursWorked);
+    public CommisionBasedPartTime(int employeeId, String name, int age, float rate, int hoursWorked, int commisionPercentage) {
+        super(employeeId, name, age, rate, hoursWorked);
         this.commisionPercentage = commisionPercentage;
     }
 

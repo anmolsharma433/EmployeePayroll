@@ -1,12 +1,22 @@
 package com.example.employeepayroll.Employee_Classes.EmployeeType_partTime;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public final class FixedBasedPartTime extends PartTime {
 
     // create variables for stroing values
+    @SerializedName("fixedAmount")
+    @Expose
     int fixedAmount;
 
+    public FixedBasedPartTime(int employeeId, String name, int age, float rate, int hoursWorked, int fixedAmount) {
+        super(employeeId, name, age, rate, hoursWorked);
+        this.fixedAmount = fixedAmount;
+    }
 
     // getter and setter
+
     public int getFixedAmount() {
         return fixedAmount;
     }
@@ -18,10 +28,7 @@ public final class FixedBasedPartTime extends PartTime {
     // constructor to input all values
 
 
-    public FixedBasedPartTime(String employeeName, int employeeAge, float rate, int hoursWorked, int fixedAmount) {
-        super(employeeName, employeeAge, rate, hoursWorked);
-        this.fixedAmount = fixedAmount;
-    }
+
 
     public double calEarnings()
     {

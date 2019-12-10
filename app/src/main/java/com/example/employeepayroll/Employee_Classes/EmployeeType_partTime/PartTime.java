@@ -1,20 +1,26 @@
 package com.example.employeepayroll.Employee_Classes.EmployeeType_partTime;
 
 import com.example.employeepayroll.Employee_Classes.Employee;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public abstract class PartTime extends Employee {
 
 
     // create variables for Storing values
+    @SerializedName("rate")
+    @Expose
     private float rate;
+    @SerializedName("hoursWorked")
+    @Expose
     private int hoursWorked;
 
 
     // constructor to input all values
 
 
-    public PartTime(String employeeName, int employeeAge, float rate, int hoursWorked) {
-        super(employeeName, employeeAge);
+    public PartTime(int employeeId, String name, int age, float rate, int hoursWorked) {
+        super(employeeId, name, age);
         this.rate = rate;
         this.hoursWorked = hoursWorked;
     }

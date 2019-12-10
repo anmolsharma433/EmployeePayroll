@@ -1,28 +1,36 @@
 package com.example.employeepayroll.Employee_Classes;
 
 import com.example.employeepayroll.Vehicle_Classes.Vehicle;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-public abstract class Employee{
+public  class Employee{
 
     //declare variables
-    private String name;
-    private int age;
-    private String employee;
+    @SerializedName("employeeid")
+    @Expose
     private int employeeId;
-    private String vehicleType;
+    @SerializedName("name")
+    @Expose
+    private String name;
+    @SerializedName("age")
+    @Expose
+    private int age;
+
     public Vehicle vehicle;
 
     //constructor
 
-
-    public Employee(String name,int age) {
+    public Employee(int employeeId, String name, int age) {
+        this.employeeId = employeeId;
         this.name = name;
         this.age = age;
     }
+
 
     //getter and setter
 
@@ -42,13 +50,7 @@ public abstract class Employee{
         this.age = age;
     }
 
-    public String getEmployee() {
-        return employee;
-    }
 
-    public void setEmployee(String employee) {
-        this.employee = employee;
-    }
 
     public int getEmployeeId() {
         return employeeId;
@@ -58,13 +60,6 @@ public abstract class Employee{
         this.employeeId = employeeId;
     }
 
-    public String getVehicleType() {
-        return vehicleType;
-    }
-
-    public void setVehicleType(String vehicleType) {
-        this.vehicleType = vehicleType;
-    }
 
     public Vehicle getVehicle() {
         return vehicle;
@@ -74,8 +69,8 @@ public abstract class Employee{
         this.vehicle = vehicle;
     }
 
-    public abstract double calEarnings();
+    public  double calEarnings()
     {
-
+   return 0.00;
     }
 }

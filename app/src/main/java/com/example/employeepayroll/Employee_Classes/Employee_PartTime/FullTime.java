@@ -1,24 +1,31 @@
 package com.example.employeepayroll.Employee_Classes.Employee_PartTime;
 
 import com.example.employeepayroll.Employee_Classes.Employee;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
 public final class FullTime extends Employee implements Serializable {
 
     // create variables for stroing values
+    @SerializedName("salary")
+    @Expose
 
     int salary;
+    @SerializedName("bonus")
+    @Expose
     int bonus;
 
     // constructor to input all values
 
 
-    public FullTime(String employeeName, int employeeAge, int salary, int bonus) {
-        super(employeeName, employeeAge);
+    public FullTime(int employeeId, String name, int age, int salary, int bonus) {
+        super(employeeId, name, age);
         this.salary = salary;
         this.bonus = bonus;
     }
+
     //getter and setter
     public float getSalary() {
         return salary;
