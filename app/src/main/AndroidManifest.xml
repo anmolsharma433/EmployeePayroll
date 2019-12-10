@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Android_Ui.EmployeeListRecyclerView"></activity>
+        <activity android:name=".Android_Ui.DetailsEmployeeActivity"></activity>
+        <activity android:name=".Android_Ui.EmployeeListRecyclerView" />
         <activity
             android:name=".Android_Ui.Navigation_menu"
             android:theme="@style/AppTheme.NoActionBar" />
