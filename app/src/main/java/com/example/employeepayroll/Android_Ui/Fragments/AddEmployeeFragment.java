@@ -47,7 +47,7 @@ public class AddEmployeeFragment extends Fragment {
         bonus = view.findViewById(R.id.edtBonus);
         employeeType =view.findViewById(R.id.rgbEmployeeType);
         fullTime = view.findViewById(R.id.rbFulltime);
-        partTime = view.findViewById(R.id.rbParttime);
+
         intern = view.findViewById(R.id.rbIntern);
         partTimeType = view.findViewById(R.id.part_Time_check);
         comBased = view.findViewById(R.id.rbcommission_Based);
@@ -75,30 +75,22 @@ public class AddEmployeeFragment extends Fragment {
             {
                 switch (i)
                 {
-                    case R.id.rbParttime:
-                        partTimeType.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                            @Override
-                            public void onCheckedChanged(RadioGroup group, int a) {
-                                empType = "part Time";
-                                switch (a)
-                                {
-                                    case R.id.rbcommission_Based:
-                                        commissionBased.setVisibility(View.VISIBLE);
-                                        fixBased.setVisibility(View.GONE);
-                                        empType = "Commission Based";
-                                        break;
-                                    case R.id.rbfixed_Based:
-                                        commissionBased.setVisibility(View.GONE);
-                                        fixedBased.setVisibility(View.VISIBLE);
-                                        empType ="Fixed Based";
-                                        break;
-                                }
-                            }
-                        });
+                    case R.id.rbfixed_Based:
+                        empType = "Fixed Based";
+                        fixedBased.setVisibility(View.VISIBLE);
                         ly_partTime.setVisibility(View.VISIBLE);
                         ly_fulltime.setVisibility(View.GONE);
                         ly_intern.setVisibility(View.GONE);
+                        commissionBased.setVisibility(View.GONE);
                         break;
+
+                    case R.id.rbcommission_Based:
+                        empType = "Commission Based";
+                        commissionBased.setVisibility(View.VISIBLE);
+                        ly_partTime.setVisibility(View.VISIBLE);
+                        ly_fulltime.setVisibility(View.GONE);
+                        ly_intern.setVisibility(View.GONE);
+                        fixedBased.setVisibility(View.GONE);
 
                     case R.id.rbIntern:
                         ly_partTime.setVisibility(View.GONE);
@@ -136,12 +128,7 @@ public class AddEmployeeFragment extends Fragment {
             public void onClick(View v) {
                 if(empType == "Part Time")
                 {
-<<<<<<< HEAD
-                   // PartTime partTime = new PartTime(Integer.parseInt(empid),empname,Integer.parseInt(empAge),empType,Integer.parseInt(emprate),Integer.parseInt(empHours));
-                   // Singleton.getInstance().addEmployee(partTime);
-=======
-//                    PartTime partTime = new PartTime(Integer.parseInt(empid),empname,Integer.parseInt(empAge),Integer.parseInt(emprate),Integer.parseInt(empHours));
->>>>>>> origin/master
+
                 }
             }
         });

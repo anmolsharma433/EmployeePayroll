@@ -90,20 +90,25 @@
                     >
 
                     <RadioButton
-                        android:id="@+id/rbParttime"
+                        android:id="@+id/rbfixed_Based"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fixed Based"/>
+                    <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Part time"
-                        android:textSize="15sp" />
+                        android:id="@+id/rbcommission_Based"
+                        android:text="Commission Based"/>
 
                     <RadioButton
                         android:id="@+id/rbIntern"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="92dp"
+                        android:layout_height="25dp"
                         android:layout_weight="1"
-                        android:text="Intern"
-                        android:textSize="15sp" />
+                        android:text="Intern" />
 
                     <RadioButton
                         android:id="@+id/rbFulltime"
@@ -151,21 +156,7 @@
                         android:layout_marginRight="10dp"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
-                        <RadioButton
-                            android:id="@+id/rbfixed_Based"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
-                            android:layout_weight="1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Fixed Based"/>
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
-                            android:id="@+id/rbcommission_Based"
-                            android:text="Commission Based"/>
+
 
 
                     </RadioGroup>
