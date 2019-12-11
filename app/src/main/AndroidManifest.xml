@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Addvehicle"></activity>
         <activity android:name=".Android_Ui.DetailsEmployeeActivity" />
         <activity android:name=".Android_Ui.EmployeeListRecyclerView" />
         <activity

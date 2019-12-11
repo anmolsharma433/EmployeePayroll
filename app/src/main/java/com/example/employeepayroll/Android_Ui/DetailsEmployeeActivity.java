@@ -154,6 +154,8 @@ public class DetailsEmployeeActivity extends AppCompatActivity {
             }
 
         }
+
+
 //        empdetail.setText(detail);
 
     }
