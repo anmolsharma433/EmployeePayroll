@@ -16,11 +16,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@color/colorPrimary"
         android:fontFamily="sans-serif-black"
         android:gravity="center"
         android:padding="10dp"
-        android:text="Detail of Employee"
+        android:text="Details of Employee"
         android:textAlignment="center"
         android:textColor="#050000"
         android:textSize="20dp" />
@@ -169,7 +168,7 @@
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:text="Employee School"
-                android:textColor="@color/colorPrimary"
+                android:textColor="#940A0A0A"
                 android:textSize="15dp">
 
             </TextView>
@@ -211,7 +210,7 @@
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:text="Salary and Bonus"
-                android:textColor="@color/colorPrimary"
+                android:textColor="#940A0A0A"
                 android:textSize="15dp">
 
             </TextView>
@@ -241,7 +240,7 @@
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:text="Total Salary"
-                android:textColor="@color/colorPrimary"
+                android:textColor="#940A0A0A"
                 android:textSize="15dp">
 
             </TextView>
@@ -283,7 +282,7 @@
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:text="Salary Description"
-                android:textColor="@color/colorPrimary"
+                android:textColor="#940A0A0A"
                 android:textSize="15dp">
 
             </TextView>
@@ -313,7 +312,7 @@
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:text="Commision"
-                android:textColor="@color/colorPrimary"
+                android:textColor="#940A0A0A"
                 android:textSize="15dp">
 
             </TextView>
@@ -344,7 +343,7 @@
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:text="Total Salary"
-                android:textColor="@color/colorPrimary"
+                android:textColor="#940A0A0A"
                 android:textSize="15dp">
 
             </TextView>
@@ -368,7 +367,6 @@
         android:id="@+id/detailtext1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#30B3D608"
         android:fontFamily="sans-serif-black"
         android:gravity="center"
         android:padding="10dp"
@@ -381,7 +379,7 @@
         android:id="@+id/recycler_vehicle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/design_default_color_on_primary"
+        android:background="@color/colorPrimary"
         >
 
     </androidx.recyclerview.widget.RecyclerView>
