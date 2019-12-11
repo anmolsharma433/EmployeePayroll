@@ -20,6 +20,8 @@ public class Addvehicle extends AppCompatActivity implements AdapterView.OnItemS
     Spinner spinner;
     String vmodel,vtype,vplate,vmake,insurance;
     Switch mySwitch = null;
+    Employee empforvehicle = (Employee) getIntent().getSerializableExtra("empobject1");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,10 +92,9 @@ public class Addvehicle extends AppCompatActivity implements AdapterView.OnItemS
 
     @Override
     public void onClick(View v) {
-        Employee empforvehicle = (Employee) getIntent().getSerializableExtra("empobject1");
-
 
         Vehicle vehicle = new Vehicle(vmake,vplate,vmodel,Boolean.valueOf(insurance),vtype);
+
 
         empforvehicle.setmyVehicle(vehicle);
 

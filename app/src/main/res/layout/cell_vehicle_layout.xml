@@ -18,58 +18,61 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <TextView
-            android:padding="10dp"
-            android:layout_marginLeft="30dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Canada"
             android:id="@+id/vtype"
-            android:textColor="#000"
-            android:layout_centerVertical="true"
-            android:textSize="17sp"/>
-
-        <TextView
-            android:padding="10dp"
-            android:layout_marginLeft="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:padding="10dp"
             android:text="Canada"
+            android:textColor="#000"
+            android:textSize="14sp" />
+
+        <TextView
             android:id="@+id/vmodel"
-            android:textColor="#000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:textSize="17sp"/>
+            android:layout_marginLeft="30dp"
+            android:padding="10dp"
+            android:text="Canada"
+            android:textColor="#000"
+            android:textSize="14sp" />
 
         <TextView
-            android:padding="10dp"
-            android:layout_marginLeft="30dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Canada"
             android:id="@+id/vmake"
-            android:textColor="#000"
-            android:layout_centerVertical="true"
-            android:textSize="17sp"/>
-        <TextView
-            android:padding="10dp"
-            android:layout_marginLeft="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:padding="10dp"
             android:text="Canada"
+            android:textColor="#000"
+            android:textSize="14sp" />
+
+        <TextView
             android:id="@+id/vplae"
-            android:textColor="#000"
-            android:layout_centerVertical="true"
-            android:textSize="17sp"/>
-        <TextView
-            android:padding="10dp"
-            android:layout_marginLeft="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Canada"
-            android:id="@+id/vInsurance"
-            android:textColor="#000"
             android:layout_centerVertical="true"
-            android:textSize="17sp"/>
+            android:layout_marginLeft="30dp"
+            android:padding="10dp"
+            android:text="Canada"
+            android:textColor="#000"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/vInsurance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:padding="10dp"
+            android:text="Canada"
+            android:textColor="#000"
+            android:textSize="14sp" />
 
 
     </LinearLayout>

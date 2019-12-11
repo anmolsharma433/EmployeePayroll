@@ -59,21 +59,21 @@ public class VehicleRVAdapter extends RecyclerView.Adapter<VehicleRVAdapter.View
         final Vehicle vdata = vehicleList.get(position);
 
 
-        holder.make.setText("Model: " + vdata.getModel());
-        holder.model.setText("Make: " + vdata.getMake());
-        holder.plate.setText("Plate: " + vdata.getPlate());
-        holder.type.setText("Vehicle type: " + vdata.getType());
+        holder.make.setText("Model:   " + vdata.getModel());
+        holder.model.setText("Make:   " + vdata.getMake());
+        holder.plate.setText("Plate:  " + vdata.getPlate());
+        holder.type.setText("Vehicle type:  " + vdata.getType());
         if (vdata.isInsurance() == true)
         {
-            holder.insurance.setText(R.string.have_insurance);
+            holder.insurance.setText("Insurance:  " + "True");
 
         }
         else
         {
-            holder.insurance.setText(R.string.no_insurance);
+            holder.insurance.setText("Insurance:  " + "No Insurance");
 
         }
-        holder.insurance.setText("Make: " + vdata.isInsurance());
+//        holder.insurance.setText("Insurance: " + vdata.isInsurance());
         holder.mylAYOUT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ViewDialog"></activity>
         <activity android:name=".Android_Ui.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +25,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Android_Ui.LogIn"
-            android:label="LogIn"></activity>
+            android:label="LogIn" />
 
         <meta-data
             android:name="preloaded_fonts"

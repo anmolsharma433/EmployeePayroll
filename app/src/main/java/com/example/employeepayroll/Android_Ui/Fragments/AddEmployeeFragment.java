@@ -1,6 +1,10 @@
 package com.example.employeepayroll.Android_Ui.Fragments;
 
+import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -28,6 +32,7 @@ import com.example.employeepayroll.Employee_Classes.EmployeeType_partTime.PartTi
 import com.example.employeepayroll.Employee_Classes.Employee_PartTime.FullTime;
 import com.example.employeepayroll.Employee_Classes.Employee_PartTime.Intern;
 import com.example.employeepayroll.R;
+import com.example.employeepayroll.ViewDialog;
 
 public class AddEmployeeFragment extends Fragment implements View.OnClickListener {
     EditText id, name, email, Age, commissionBased, fixedBased, hoursworked, rate, ratemcommissionPer, school, salary, bonus;
@@ -129,48 +134,49 @@ public class AddEmployeeFragment extends Fragment implements View.OnClickListene
 
     }
 
-    @Override
-    public void onClick(View view) {
+            @Override
+            public void onClick(View view) {
 
-        //getting the value from fields
-        empid = Integer.parseInt(id.getText().toString());
-        empname = name.getText().toString();
+                //getting the value from fields
+                empid = Integer.parseInt(id.getText().toString());
+                empname = name.getText().toString();
 //        String empEmail = String.valueOf(email.getText());
-        empAge = Integer.parseInt(Age.getText().toString());
-        emprate = String.valueOf(rate.getText());
-        empFixedBased = String.valueOf(fixedBased.getText());
-        empHours = String.valueOf(hoursworked.getText());
-        empCommissionBased = commissionBased.getText().toString();
+                empAge = Integer.parseInt(Age.getText().toString());
+                emprate = String.valueOf(rate.getText());
+                empFixedBased = String.valueOf(fixedBased.getText());
+                empHours = String.valueOf(hoursworked.getText());
+                empCommissionBased = commissionBased.getText().toString();
 
-        empschool = school.getText().toString();
-        empsalary = String.valueOf(salary.getText());
-        empbonus = String.valueOf(bonus.getText());
+                empschool = school.getText().toString();
+                empsalary = String.valueOf(salary.getText());
+                empbonus = String.valueOf(bonus.getText());
 
 
-        if (empType == "Fixed Based") {
+                if (empType == "Fixed Based") {
 
-            FixedBasedPartTime fixedBasedPartTime = new FixedBasedPartTime(empid, empname, empAge, empType, Float.parseFloat(emprate), Integer.parseInt(empHours), Integer.parseInt(empFixedBased));
-            addemployeobj.addEmployee(fixedBasedPartTime);
-        } else if (empType == "Commission Based") {
+                    FixedBasedPartTime fixedBasedPartTime = new FixedBasedPartTime(empid, empname, empAge, empType, Float.parseFloat(emprate), Integer.parseInt(empHours), Integer.parseInt(empFixedBased));
+                    addemployeobj.addEmployee(fixedBasedPartTime);
+                } else if (empType == "Commission Based") {
 
-            CommisionBasedPartTime commisionBasedPartTime = new CommisionBasedPartTime(empid, empname, empAge, empType, Float.parseFloat(emprate), Integer.parseInt(empHours), Integer.parseInt(empCommissionBased));
-            addemployeobj.addEmployee(commisionBasedPartTime);
-        } else if (empType == "Intern") {
-            Intern intern = new Intern(empid, empname, empAge, empType, empschool);
-            addemployeobj.addEmployee(intern);
-            intern.setSchoolName(empschool);
+                    CommisionBasedPartTime commisionBasedPartTime = new CommisionBasedPartTime(empid, empname, empAge, empType, Float.parseFloat(emprate), Integer.parseInt(empHours), Integer.parseInt(empCommissionBased));
+                    addemployeobj.addEmployee(commisionBasedPartTime);
+                } else if (empType == "Intern") {
+                    Intern intern = new Intern(empid, empname, empAge, empType, empschool);
+                    addemployeobj.addEmployee(intern);
+                    intern.setSchoolName(empschool);
 
-            System.out.println("Emp intern" + empid + empschool);
-        } else if (empType == "Full Time") {
-            FullTime fullTime = new FullTime(empid ,empname, empAge, empType, Integer.parseInt(empsalary), Integer.parseInt(empbonus));
-            addemployeobj.addEmployee(fullTime);
-            System.out.println("fixed base" + empType);
-                getActivity().onBackPressed();
+                    System.out.println("Emp intern" + empid + empschool);
+                } else if (empType == "Full Time") {
+                    FullTime fullTime = new FullTime(empid, empname, empAge, empType, Integer.parseInt(empsalary), Integer.parseInt(empbonus));
+                    addemployeobj.addEmployee(fullTime);
+                    System.out.println("fixed base" + empType);
+                    getActivity().onBackPressed();
+
+
+                }
+            }
 
         }
-
-    }
-}
 
 
 
