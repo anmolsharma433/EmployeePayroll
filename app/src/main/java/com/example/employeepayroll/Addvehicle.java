@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -14,13 +15,14 @@ import android.widget.Switch;
 import com.example.employeepayroll.Employee_Classes.Employee;
 import com.example.employeepayroll.Vehicle_Classes.Vehicle;
 
-public class Addvehicle extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener, CompoundButton.OnCheckedChangeListener {
+public class Addvehicle extends AppCompatActivity implements AdapterView.OnItemSelectedListener, CompoundButton.OnCheckedChangeListener {
 
     EditText model, type,palte,make;
     Spinner spinner;
     String vmodel,vtype,vplate,vmake,insurance;
     Switch mySwitch = null;
-    Employee empforvehicle = (Employee) getIntent().getSerializableExtra("empobject1");
+    Button  btn;
+
 
 
     @Override
@@ -38,12 +40,13 @@ public class Addvehicle extends AppCompatActivity implements AdapterView.OnItemS
         palte = findViewById(R.id.vehicleplate);
         make = findViewById(R.id.vehiclemake);
 
+        btn = findViewById(R.id.buttonvehicle);
 
-         vmodel = String.valueOf(model.getText());
+         vmodel = model.getText().toString();
          vtype = String.valueOf(type.getText());
          vplate = String.valueOf(palte.getText());
 
-         vmake = String.valueOf(make.getText());
+         vmake = make.getText().toString();
 
 
         spinner = findViewById(R.id.spinnervehicle);
@@ -60,7 +63,12 @@ public class Addvehicle extends AppCompatActivity implements AdapterView.OnItemS
 
 
 
-        type.setOnClickListener(this);
+        type.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                spinner.performClick();
+            }
+        });
 
         mySwitch = (Switch) findViewById(R.id.switch1);
         mySwitch.setOnCheckedChangeListener(this);
@@ -68,7 +76,18 @@ public class Addvehicle extends AppCompatActivity implements AdapterView.OnItemS
 
 
 
+       btn.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Employee empforvehicle = (Employee) getIntent().getSerializableExtra("empobject1");
+        if(empforvehicle == null) {
+            Vehicle vehicle = new Vehicle(vmake, vplate, vmodel, Boolean.valueOf(insurance), vtype);
 
+            empforvehicle.setmyVehicle(vehicle);
+        }
+        System.out.println("in vehicle"+vmake+vplate+vmodel);
+    }
+});
 
 
 
@@ -90,15 +109,7 @@ public class Addvehicle extends AppCompatActivity implements AdapterView.OnItemS
 
     }
 
-    @Override
-    public void onClick(View v) {
 
-        Vehicle vehicle = new Vehicle(vmake,vplate,vmodel,Boolean.valueOf(insurance),vtype);
-
-
-        empforvehicle.setmyVehicle(vehicle);
-
-    }
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
