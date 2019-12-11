@@ -40,17 +40,17 @@ public class Singleton {
     }
 
     public  void  create(){
-        Intern emp1 = new Intern(6,"Ritik",26,"intern","ssdp");
-        FullTime emp2 = new FullTime(7,"jagpal",26,"fulltime",200,30);
-        CommisionBasedPartTime emp3 = new CommisionBasedPartTime(8,"Rizul",26,"PartTime / Commissioned",23,14,20);
-        FixedBasedPartTime emp4 = new FixedBasedPartTime(9,"Kulddep",90,"PartTime / Fixed Amount",20,15,300);
+        Intern emp1 = new Intern(1,"Ritik",26,"Intern","ssdp");
+        FullTime emp2 = new FullTime(2,"Jagpal",26,"Full Time",200,30);
+        CommisionBasedPartTime emp3 = new CommisionBasedPartTime(3,"Rizul",26,"PartTime / Commissioned",23,14,20);
+        FixedBasedPartTime emp4 = new FixedBasedPartTime(4,"Kulddep",56,"PartTime / Fixed Amount",20,15,300);
 
 
-        Vehicle vehicle1= new Vehicle("abc","pb08","gid",true,"car");
-        Vehicle vehicle2= new Vehicle("pqr","pb09","jdhj",true,"car");
-        Vehicle vehicle3= new Vehicle("xyz","pb10","update",false,"motorcycle");
+        Vehicle vehicle1= new Vehicle("BMW","KO PB08","S21",true,"CAR");
+        Vehicle vehicle2= new Vehicle("Suzuki","MZ Pb09","New",true,"CAR");
+        Vehicle vehicle3= new Vehicle("Yamaha","BM PB10","Super",false,"Motorcycle");
 
-        Vehicle vehicle4= new Vehicle("tcd","pb11","new",true,"motorcycle");
+        Vehicle vehicle4= new Vehicle("Honda","CX PB11","Ultra",true,"Motorcycle");
 
 
         emp1.setmyVehicle(vehicle1);
