@@ -56,21 +56,21 @@ public class DetailsEmployeeActivity extends AppCompatActivity {
         emptype.setText(myemp.getType());
 
 
-        if(myemp.getType().equalsIgnoreCase("intern"))
+        if(myemp instanceof Intern)
         {
 
             intern.setVisibility(View.VISIBLE);
             TextView school = findViewById(R.id.textEmpschool);
-            Intern myintern = new Intern();
+            Intern myintern = (Intern) myemp;
             school.setText(myintern.getSchoolName());
 
         }
 
-        else if(myemp.getType().equalsIgnoreCase("fulltime"))
+        else if(myemp instanceof  FullTime)
         {
 
             fulltime.setVisibility(View.VISIBLE);
-            FullTime myfultime = new FullTime();
+            FullTime myfultime = (FullTime) myemp;
             TextView salary = findViewById(R.id.textEmpsalaryfulltime);
             TextView totalsalary = findViewById(R.id.textEmptotalsalaryftime);
             salary.setText(myfultime.getSalary() + " $ + " + myfultime.getBonus() + " $ (C)" );
@@ -78,9 +78,9 @@ public class DetailsEmployeeActivity extends AppCompatActivity {
             totalsalary.setText(totalftimesalary);
 
         }
-        else if(myemp.getType().equalsIgnoreCase("PartTime / Fixed Amount"))
+        else if(myemp instanceof FixedBasedPartTime)
         {
-            FixedBasedPartTime myFixedbase = new FixedBasedPartTime();
+            FixedBasedPartTime myFixedbase = (FixedBasedPartTime) myemp;
 
 
             parttime.setVisibility(View.VISIBLE);
@@ -94,10 +94,10 @@ public class DetailsEmployeeActivity extends AppCompatActivity {
             totalsalaryptime.setText(totalptimesalary + " $");
 
         }
-        else if(myemp.getType().equalsIgnoreCase("PartTime / Commissioned"))
+        else if(myemp instanceof  CommisionBasedPartTime)
         {
 
-            CommisionBasedPartTime mycommisionBasedPartTime = new CommisionBasedPartTime();
+            CommisionBasedPartTime mycommisionBasedPartTime = (CommisionBasedPartTime) myemp;
             parttime.setVisibility(View.VISIBLE);
             TextView salaryptime = findViewById(R.id.textEmpsalaryparttime);
             TextView totalsalaryptime = findViewById(R.id.textEmptotalsalaryptime);
@@ -122,12 +122,9 @@ public class DetailsEmployeeActivity extends AppCompatActivity {
         for (int i = 0; i <= myvehicles.size()-1; i++) {
 
             Vehicle myvehicle = myvehicles.get(i);
-//            detail = detail + myvehicle.getMake() + "   " + myvehicle.getModel();
-
             if (myvehicle ==  null)
             {
                 detailtext.setText("No vehicles Registered");
-                //List<Vehicle> mybills = new ArrayList<Vehicle>();
 
                 Toast.makeText(this,"No vehicle", Toast.LENGTH_SHORT).show();
 
@@ -150,14 +147,11 @@ public class DetailsEmployeeActivity extends AppCompatActivity {
                 final Singleton singleton = Singleton.getInstance();
 
 
-
-
             }
 
         }
 
 
-//        empdetail.setText(detail);
 
     }
     @Override
