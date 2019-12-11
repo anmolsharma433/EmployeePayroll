@@ -1,14 +1,19 @@
 package com.example.employeepayroll.Employee_Classes.EmployeeType_partTime;
 
+import android.util.SparseIntArray;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public final class FixedBasedPartTime extends PartTime {
+import java.io.Serializable;
+
+public  class FixedBasedPartTime extends PartTime implements  Serializable  {
 
     // create variables for stroing values
     @SerializedName("fixedAmount")
     @Expose
     int fixedAmount;
+
     public  FixedBasedPartTime(){
 
     }

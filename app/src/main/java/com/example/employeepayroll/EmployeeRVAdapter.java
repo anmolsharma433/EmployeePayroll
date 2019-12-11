@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.employeepayroll.Android_Ui.DetailsEmployeeActivity;
 import com.example.employeepayroll.Employee_Classes.Employee;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class EmployeeRVAdapter extends RecyclerView.Adapter<EmployeeRVAdapter.ViewHolder> {
@@ -54,7 +55,7 @@ public class EmployeeRVAdapter extends RecyclerView.Adapter<EmployeeRVAdapter.Vi
 
     @SuppressLint("ResourceAsColor")
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
 
         final Employee mydata = myaaraylist.get(position);
 
@@ -62,12 +63,12 @@ public class EmployeeRVAdapter extends RecyclerView.Adapter<EmployeeRVAdapter.Vi
         holder.name.setText("Employee Name: " + mydata.getName());
         holder.id.setText("Employee ID: " + String.valueOf(mydata.getEmployeeId()));
 
-        holder.mylAYOUT.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myintent = new Intent(context, DetailsEmployeeActivity.class);
-                myintent.putExtra("empobject", mydata);
-                context.startActivity(myintent);
+                Intent myintent = new Intent(holder.itemView.getContext(), DetailsEmployeeActivity.class);
+                myintent.putExtra("empobject",(Serializable) mydata);
+                holder.itemView.getContext().startActivity(myintent);
 
             }
         });

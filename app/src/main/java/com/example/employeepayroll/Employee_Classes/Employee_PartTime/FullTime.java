@@ -10,7 +10,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public final class FullTime extends Employee implements Parcelable {
+public  class FullTime extends Employee implements  Serializable {
 
     // create variables for stroing values
     @SerializedName("salary")

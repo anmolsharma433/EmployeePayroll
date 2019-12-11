@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public  class CommisionBasedPartTime extends PartTime{
+public  class CommisionBasedPartTime extends PartTime implements  Serializable{
 
 
     // create variables for stroing values

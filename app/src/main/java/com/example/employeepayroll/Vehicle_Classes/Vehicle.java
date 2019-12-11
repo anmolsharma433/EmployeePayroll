@@ -10,7 +10,7 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
 @SuppressLint("ParcelCreator")
-public class Vehicle implements Parcelable {
+public class Vehicle implements Serializable {
     @SerializedName("make")
     @Expose
     private String make;
@@ -39,39 +39,39 @@ public class Vehicle implements Parcelable {
 
     }
 
-    protected Vehicle(Parcel in) {
-        make = in.readString();
-        plate = in.readString();
-        model = in.readString();
-        insurance = in.readByte() != 0;
-        type = in.readString();
-    }
+//    protected Vehicle(Parcel in) {
+//        make = in.readString();
+//        plate = in.readString();
+//        model = in.readString();
+//        insurance = in.readByte() != 0;
+//        type = in.readString();
+//    }
+//
+//    @Override
+//    public void writeToParcel(Parcel dest, int flags) {
+//        dest.writeString(make);
+//        dest.writeString(plate);
+//        dest.writeString(model);
+//        dest.writeByte((byte) (insurance ? 1 : 0));
+//        dest.writeString(type);
+//    }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(make);
-        dest.writeString(plate);
-        dest.writeString(model);
-        dest.writeByte((byte) (insurance ? 1 : 0));
-        dest.writeString(type);
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    public static final Creator<Vehicle> CREATOR = new Creator<Vehicle>() {
-        @Override
-        public Vehicle createFromParcel(Parcel in) {
-            return new Vehicle(in);
-        }
-
-        @Override
-        public Vehicle[] newArray(int size) {
-            return new Vehicle[size];
-        }
-    };
+//    @Override
+//    public int describeContents() {
+//        return 0;
+//    }
+//
+//    public static final Creator<Vehicle> CREATOR = new Creator<Vehicle>() {
+//        @Override
+//        public Vehicle createFromParcel(Parcel in) {
+//            return new Vehicle(in);
+//        }
+//
+//        @Override
+//        public Vehicle[] newArray(int size) {
+//            return new Vehicle[size];
+//        }
+//    };
 
     public String getType() {
         return type;

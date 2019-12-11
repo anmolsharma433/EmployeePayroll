@@ -4,7 +4,9 @@ import com.example.employeepayroll.Employee_Classes.Employee;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class PartTime extends Employee {
+import java.io.Serializable;
+
+public class PartTime extends Employee implements Serializable {
 
 
     // create variables for Storing values

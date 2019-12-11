@@ -49,7 +49,7 @@ public class DetailsEmployeeActivity extends AppCompatActivity {
         parttime = findViewById(R.id.layoutparttime);
         detailtext = findViewById(R.id.detailtext1);
 
-        Employee myemp = getIntent().getParcelableExtra("empobject");
+        Employee myemp = (Employee) getIntent().getSerializableExtra("empobject");
         empid.setText(String.valueOf(myemp.getEmployeeId()));
         empname.setText(myemp.getName());
         empage.setText(myemp.getAge() + "Years");
@@ -114,7 +114,7 @@ public class DetailsEmployeeActivity extends AppCompatActivity {
 
 
 
-        Employee empnewdata = getIntent().getParcelableExtra("empobject");
+        Employee empnewdata = (Employee) getIntent().getSerializableExtra("empobject");
         String detail = empnewdata.getName() + "\n" + empnewdata.getType() + "\n";
 
         List<Vehicle> myvehicles = empnewdata.getVehicle();

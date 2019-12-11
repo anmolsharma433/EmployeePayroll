@@ -9,7 +9,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class Intern extends Employee  {
+public class Intern extends Employee implements  Serializable   {
 
     // create variables for stroing values
     @SerializedName("schoolName")
@@ -18,11 +18,11 @@ public class Intern extends Employee  {
 
     //constructor to get values
 
-
-    public Intern(Parcel in, String schoolName) {
-        super(in);
-        this.schoolName = schoolName;
-    }
+//
+//    public Intern(Parcel in, String schoolName) {
+//        super(in);
+//        this.schoolName = schoolName;
+//    }
 
     public  Intern()
     {

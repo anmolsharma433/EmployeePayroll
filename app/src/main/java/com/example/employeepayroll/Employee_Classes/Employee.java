@@ -8,6 +8,7 @@ import com.example.employeepayroll.Vehicle_Classes.Vehicle;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -15,9 +16,9 @@ import java.util.GregorianCalendar;
 import java.util.List;
 
 
-@SuppressLint("ParcelCreator")
+//@SuppressLint("ParcelCreator")
 
-public  class Employee implements Parcelable {
+public  class Employee implements Serializable {
 
     //declare variables
     @SerializedName("id")
@@ -38,42 +39,42 @@ public  class Employee implements Parcelable {
 
 
 
-    protected Employee(Parcel in) {
-        employeeId = in.readInt();
-        name = in.readString();
-        age = in.readInt();
-        type = in.readString();
-        vehicle = in.createTypedArrayList(Vehicle.CREATOR);
-    }
+//    protected Employee(Parcel in) {
+//        employeeId = in.readInt();
+//        name = in.readString();
+//        age = in.readInt();
+//        type = in.readString();
+//        vehicle = in.createTypedArrayList(Vehicle.CREATOR);
+//    }
 
     public Employee() {
     }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(employeeId);
-        dest.writeString(name);
-        dest.writeInt(age);
-        dest.writeString(type);
-        dest.writeTypedList(vehicle);
-    }
+//    @Override
+//    public void writeToParcel(Parcel dest, int flags) {
+//        dest.writeInt(employeeId);
+//        dest.writeString(name);
+//        dest.writeInt(age);
+//        dest.writeString(type);
+//        dest.writeTypedList(vehicle);
+//    }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    public static final Creator<Employee> CREATOR = new Creator<Employee>() {
-        @Override
-        public Employee createFromParcel(Parcel in) {
-            return new Employee(in);
-        }
-
-        @Override
-        public Employee[] newArray(int size) {
-            return new Employee[size];
-        }
-    };
+//    @Override
+//    public int describeContents() {
+//        return 0;
+//    }
+//
+//    public static final Creator<Employee> CREATOR = new Creator<Employee>() {
+//        @Override
+//        public Employee createFromParcel(Parcel in) {
+//            return new Employee(in);
+//        }
+//
+//        @Override
+//        public Employee[] newArray(int size) {
+//            return new Employee[size];
+//        }
+//    };
 
     public String getType() {
         return type;
