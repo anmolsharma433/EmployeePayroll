@@ -37,6 +37,8 @@ public class DetailsEmployeeActivity extends AppCompatActivity {
     LinearLayout intern,fulltime,parttime;
     private List<Employee> myaaraylist;
 //    final Employee mydata = myaaraylist.get();
+ VehicleRVAdapter vehicleDataAdapter = new VehicleRVAdapter(this);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -139,11 +141,11 @@ public class DetailsEmployeeActivity extends AppCompatActivity {
 
 
                 RecyclerView recyclerView1 = findViewById(R.id.recycler_vehicle);
-                final VehicleRVAdapter vehicleDataAdapter = new VehicleRVAdapter(this);
                 vehicleDataAdapter.setMyaaraylist(mv);
                 LinearLayoutManager layoutManager = new LinearLayoutManager(this);
                 recyclerView1.setLayoutManager(layoutManager);
                 recyclerView1.setAdapter(vehicleDataAdapter);
+                vehicleDataAdapter.notifyDataSetChanged();
 
 
 
@@ -169,7 +171,6 @@ public class DetailsEmployeeActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         //add intent for add vehicle
         Employee myemp = (Employee) getIntent().getSerializableExtra("empobject");
-
 
         Intent intent = new Intent(DetailsEmployeeActivity.this, Addvehicle.class);
         intent.putExtra("empobject1",(Serializable) myemp );

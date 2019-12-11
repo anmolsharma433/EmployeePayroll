@@ -29,7 +29,6 @@ public class Singleton {
     public void addvehicle(Vehicle e) {
         vehicleList.add(e);
 
-
     }
 
 
@@ -56,6 +55,8 @@ public class Singleton {
 
 
         Vehicle vehicle1= new Vehicle("BMW","KO PB08","S21",true,"CAR");
+        Vehicle vehicle5= new Vehicle("Honda","K9 PB08","upper1",true,"Motorcycle");
+
         Vehicle vehicle2= new Vehicle("Suzuki","MZ Pb09","New",true,"CAR");
         Vehicle vehicle3= new Vehicle("Yamaha","BM PB10","Super",false,"Motorcycle");
 
@@ -63,6 +64,7 @@ public class Singleton {
 
 
         emp1.setmyVehicle(vehicle1);
+        emp1.setmyVehicle(vehicle4);
 
         emp2.setmyVehicle(vehicle2);
 
