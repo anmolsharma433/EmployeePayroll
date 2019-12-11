@@ -95,6 +95,7 @@ public class AddEmployeeFragment extends Fragment {
                         ly_fulltime.setVisibility(View.GONE);
                         ly_intern.setVisibility(View.GONE);
                         fixedBased.setVisibility(View.GONE);
+                        break;
 
                     case R.id.rbIntern:
                         ly_partTime.setVisibility(View.GONE);
@@ -127,7 +128,7 @@ public class AddEmployeeFragment extends Fragment {
         final String empsalary = String.valueOf(salary.getText());
         final String empbonus = String.valueOf(bonus.getText());
         final String empFixedBased = String.valueOf(fixedBased.getText());
-        final String empCommissionBased = String.valueOf(commissionBased);
+        final String empCommissionBased = String.valueOf(commissionBased.getText());
 
         savePayroll.setOnClickListener(new View.OnClickListener() {
             @Override
