@@ -14,7 +14,7 @@ public class Singleton {
     private static Singleton obj;
     
     ArrayList<Employee> employeeArrayList = new ArrayList<>();
-//    ArrayList<Vehicle> vehicleList = new ArrayList<>();
+    ArrayList<Vehicle> vehicleList = new ArrayList<>();
 
     public static Singleton getInstance() {
         if (obj == null) {
@@ -26,9 +26,11 @@ public class Singleton {
     public void addEmployee(Employee e) {
         employeeArrayList.add(e);
     }
-//    public void addvehicle(Vehicle e) {
-//        vehicleList.add(e);
-//    }
+    public void addvehicle(Vehicle e) {
+        vehicleList.add(e);
+
+
+    }
 
 
 

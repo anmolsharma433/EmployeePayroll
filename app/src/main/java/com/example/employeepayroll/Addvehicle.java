@@ -3,6 +3,7 @@ package com.example.employeepayroll;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.BoringLayout;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -12,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Switch;
 
+import com.example.employeepayroll.Android_Ui.Singleton;
 import com.example.employeepayroll.Employee_Classes.Employee;
 import com.example.employeepayroll.Vehicle_Classes.Vehicle;
 
@@ -22,7 +24,7 @@ public class Addvehicle extends AppCompatActivity implements AdapterView.OnItemS
     String vmodel,vtype,vplate,vmake,insurance;
     Switch mySwitch = null;
     Button  btn;
-
+Singleton singleton = Singleton.getInstance();
 
 
     @Override
@@ -42,11 +44,7 @@ public class Addvehicle extends AppCompatActivity implements AdapterView.OnItemS
 
         btn = findViewById(R.id.buttonvehicle);
 
-         vmodel = model.getText().toString();
-         vtype = String.valueOf(type.getText());
-         vplate = String.valueOf(palte.getText());
 
-         vmake = make.getText().toString();
 
 
         spinner = findViewById(R.id.spinnervehicle);
@@ -79,12 +77,23 @@ public class Addvehicle extends AppCompatActivity implements AdapterView.OnItemS
        btn.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        Employee empforvehicle = (Employee) getIntent().getSerializableExtra("empobject1");
-        if(empforvehicle == null) {
-            Vehicle vehicle = new Vehicle(vmake, vplate, vmodel, Boolean.valueOf(insurance), vtype);
+        vmodel = model.getText().toString();
+        vtype = String.valueOf(type.getText());
+        vplate = String.valueOf(palte.getText());
 
-            empforvehicle.setmyVehicle(vehicle);
-        }
+        vmake = make.getText().toString();
+        Employee empforvehicle = (Employee) getIntent().getSerializableExtra("empobject1");
+
+            Vehicle vehicle = new Vehicle(vmake, vplate, vmodel, Boolean.valueOf(insurance), vtype);
+//        empforvehicle.setMake(vmake);
+//        empforvehicle.setInsurance(Boolean.valueOf(insurance));
+//        empforvehicle.setModel(vmodel);
+//        empforvehicle.setType(vtype);
+//        empforvehicle.setPlate(vplate);
+        empforvehicle.setmyVehicle(vehicle);
+
+
+
         System.out.println("in vehicle"+vmake+vplate+vmodel);
     }
 });
