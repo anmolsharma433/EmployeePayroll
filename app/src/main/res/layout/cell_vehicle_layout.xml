@@ -3,14 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:id="@+id/parent_layout">
+    android:id="@+id/vehicle_layout">
+
     <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/firstImage"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_margin="10dp"
         android:padding="10dp"
-        android:src="@drawable/ic_action_person"
-        android:id="@+id/firstImage" />
+        android:src="@drawable/motorcycle" />
 
     <LinearLayout
         android:layout_margin="5dp"
@@ -24,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Canada"
-            android:id="@+id/empid"
+            android:id="@+id/vmodel"
             android:textColor="#000"
             android:layout_centerVertical="true"
             android:textSize="17sp"/>
@@ -35,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Canada"
-            android:id="@+id/empname"
+            android:id="@+id/vmake"
             android:textColor="#000"
             android:layout_centerVertical="true"
             android:textSize="17sp"/>

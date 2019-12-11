@@ -112,7 +112,7 @@ public class AddEmployeeFragment extends Fragment {
             public void onClick(View v) {
                 if(empType == "Part Time")
                 {
-                    PartTime partTime = new PartTime(Integer.parseInt(empid),empname,Integer.parseInt(empAge),Integer.parseInt(emprate),Integer.parseInt(empHours));
+//                    PartTime partTime = new PartTime(Integer.parseInt(empid),empname,Integer.parseInt(empAge),Integer.parseInt(emprate),Integer.parseInt(empHours));
                 }
             }
         });

@@ -1,11 +1,16 @@
 package com.example.employeepayroll.Android_Ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.employeepayroll.Employee_Classes.Employee;
 import com.example.employeepayroll.Employee_Classes.EmployeeType_partTime.CommisionBasedPartTime;
@@ -13,8 +18,10 @@ import com.example.employeepayroll.Employee_Classes.EmployeeType_partTime.FixedB
 import com.example.employeepayroll.Employee_Classes.Employee_PartTime.FullTime;
 import com.example.employeepayroll.Employee_Classes.Employee_PartTime.Intern;
 import com.example.employeepayroll.R;
+import com.example.employeepayroll.VehicleRVAdapter;
 import com.example.employeepayroll.Vehicle_Classes.Vehicle;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DetailsEmployeeActivity extends AppCompatActivity {
@@ -109,7 +116,37 @@ public class DetailsEmployeeActivity extends AppCompatActivity {
         for (int i = 0; i <= myvehicles.size()-1; i++) {
 
             Vehicle myvehicle = myvehicles.get(i);
-            detail = detail + myvehicle.getMake() + "   " + myvehicle.getModel();
+//            detail = detail + myvehicle.getMake() + "   " + myvehicle.getModel();
+
+            if (myvehicle ==  null)
+            {
+                detailtext.setText("No vehicles Registered");
+                //List<Vehicle> mybills = new ArrayList<Vehicle>();
+
+                Toast.makeText(this,"No vehicle", Toast.LENGTH_SHORT).show();
+
+            }
+            else {
+
+                List<Vehicle> mv = myemp.getVehicle();
+
+
+                RecyclerView recyclerView1 = findViewById(R.id.recycler_vehicle);
+                final VehicleRVAdapter vehicleDataAdapter = new VehicleRVAdapter(this);
+                vehicleDataAdapter.setMyaaraylist(mv);
+                LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+                recyclerView1.setLayoutManager(layoutManager);
+                recyclerView1.setAdapter(vehicleDataAdapter);
+
+
+
+
+                final Singleton singleton = Singleton.getInstance();
+
+
+
+
+            }
 
         }
 //        empdetail.setText(detail);

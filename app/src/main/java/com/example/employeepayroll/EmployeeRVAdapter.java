@@ -94,8 +94,8 @@ public class EmployeeRVAdapter extends RecyclerView.Adapter<EmployeeRVAdapter.Vi
 
             mylAYOUT = itemView.findViewById(R.id.parent_layout);
 
-            id = itemView.findViewById(R.id.empid);
-            name = itemView.findViewById(R.id.empname);
+            id = itemView.findViewById(R.id.vmodel);
+            name = itemView.findViewById(R.id.vmake);
 
 
         }
