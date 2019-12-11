@@ -61,6 +61,7 @@ public class DetailsEmployeeActivity extends AppCompatActivity {
         if(myemp instanceof Intern)
         {
 
+
             intern.setVisibility(View.VISIBLE);
             TextView school = findViewById(R.id.textEmpschool);
             Intern myintern = (Intern) myemp;

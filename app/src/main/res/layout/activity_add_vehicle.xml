@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Addvehicle">
     <ScrollView android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        xmlns:android="http://schemas.android.com/apk/res/android">
+        android:layout_width="match_parent">
 
     <LinearLayout
 
@@ -105,9 +104,8 @@
 
                 <Spinner
                     android:id="@+id/spinnervehicle"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
                     />
 
             </androidx.cardview.widget.CardView>
@@ -165,7 +163,6 @@
 
         </LinearLayout>
 
-        // first text box ends here
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -206,13 +203,25 @@
 
         </LinearLayout>
 
-        // first text box ends here
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="388dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:orientation="horizontal">
+
+            <Switch
+                android:id="@+id/switch1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:switchPadding="40dp"
+                android:text="Insurance"
+                android:textSize="30sp"
+                android:theme="@style/SCBSwitch"
+                android:textOff="@string/no_insurance"
+                android:textOn="@string/have_insurance"
+                />
 
         </LinearLayout>
 

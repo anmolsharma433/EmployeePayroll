@@ -9,6 +9,8 @@
     <string name="dm">Enable Dark Mode</string>
     <string name="navigation_drawer_open"> open navigation drawer</string>
     <string name="navigation_drawer_close"> close navigation drawer</string>
+    <string name="no_insurance">No Insurance</string>
+    <string name="have_insurance">Have Insurance</string>
     <string-array name="vehicletype">
         <item>Select Vehicle</item>
         <item>Car</item>

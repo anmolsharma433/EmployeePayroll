@@ -6,17 +6,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Switch;
 
 import com.example.employeepayroll.Employee_Classes.Employee;
 import com.example.employeepayroll.Vehicle_Classes.Vehicle;
 
-public class Addvehicle extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
+public class Addvehicle extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
     EditText model, type,palte,make;
     Spinner spinner;
-    String vmodel,vtype,vplate,vmake;
+    String vmodel,vtype,vplate,vmake,insurance;
+    Switch mySwitch = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +49,7 @@ public class Addvehicle extends AppCompatActivity implements AdapterView.OnItemS
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.vehicletype, android.R.layout.simple_spinner_item);
         // Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
 
@@ -57,7 +60,8 @@ public class Addvehicle extends AppCompatActivity implements AdapterView.OnItemS
 
         type.setOnClickListener(this);
 
-
+        mySwitch = (Switch) findViewById(R.id.switch1);
+        mySwitch.setOnCheckedChangeListener(this);
 
 
 
@@ -89,9 +93,23 @@ public class Addvehicle extends AppCompatActivity implements AdapterView.OnItemS
         Employee empforvehicle = (Employee) getIntent().getSerializableExtra("empobject1");
 
 
-        Vehicle vehicle = new Vehicle(vmake,vplate,vmodel,true,vtype);
+        Vehicle vehicle = new Vehicle(vmake,vplate,vmodel,Boolean.valueOf(insurance),vtype);
 
         empforvehicle.setmyVehicle(vehicle);
 
     }
-}
+
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+
+            if (isChecked) {
+                insurance = mySwitch.getText().toString();
+                // do something when check is selected
+            } else {
+                insurance = mySwitch.getText().toString();
+                //do something when unchecked
+            }
+        }
+    }
+
