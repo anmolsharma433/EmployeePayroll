@@ -61,7 +61,19 @@ public class VehicleRVAdapter extends RecyclerView.Adapter<VehicleRVAdapter.View
 
         holder.make.setText("Model: " + vdata.getModel());
         holder.model.setText("Make: " + vdata.getMake());
+        holder.plate.setText("Plate: " + vdata.getPlate());
+        holder.type.setText("Vehicle type: " + vdata.getType());
+        if (vdata.isInsurance() == true)
+        {
+            holder.insurance.setText("Insurance True");
 
+        }
+        else
+        {
+            holder.insurance.setText("Insurance False");
+
+        }
+        holder.insurance.setText("Make: " + vdata.isInsurance());
         holder.mylAYOUT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,7 +96,9 @@ public class VehicleRVAdapter extends RecyclerView.Adapter<VehicleRVAdapter.View
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView make, age, model;
+        TextView make, model;
+        TextView plate, insurance;
+        TextView type;
         LinearLayout mylAYOUT;
 
         public ViewHolder(@NonNull View itemView) {
@@ -96,6 +110,10 @@ public class VehicleRVAdapter extends RecyclerView.Adapter<VehicleRVAdapter.View
 
             model = itemView.findViewById(R.id.vmodel);
             make = itemView.findViewById(R.id.vmake);
+            plate = itemView.findViewById(R.id.vplae);
+            type = itemView.findViewById(R.id.vtype);
+            insurance = itemView.findViewById(R.id.vInsurance);
+
 
 
         }
