@@ -15,16 +15,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.employeepayroll.Android_Ui.DetailsEmployeeActivity;
 import com.example.employeepayroll.Employee_Classes.Employee;
+import com.example.employeepayroll.Vehicle_Classes.Vehicle;
 
 import java.util.List;
 
-public class EmployeeRVAdapter extends RecyclerView.Adapter<EmployeeRVAdapter.ViewHolder> {
+public class VehicleRVAdapter extends RecyclerView.Adapter<VehicleRVAdapter.ViewHolder> {
 
     private Context context;
-    private List<Employee> myaaraylist;
+    private List<Vehicle> vehicleList;
 
 
-    public EmployeeRVAdapter(Context context) {
+    public VehicleRVAdapter(Context context) {
         this.context = context;
     }
 
@@ -37,18 +38,17 @@ public class EmployeeRVAdapter extends RecyclerView.Adapter<EmployeeRVAdapter.Vi
         this.context = context;
     }
 
-    public List<Employee> getMyaaraylist() {
-        return myaaraylist;
+    public List<Vehicle> getMyaaraylist() {
+        return vehicleList;
     }
 
-    public void setMyaaraylist(List<Employee> myaaraylist) {
-        this.myaaraylist = myaaraylist;
+    public void setMyaaraylist(List<Vehicle> vehiclelist) { this.vehicleList = vehiclelist;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cell_employee_layout, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cell_vehicle_layout, parent, false);
         return new ViewHolder(view);
     }
 
@@ -56,17 +56,29 @@ public class EmployeeRVAdapter extends RecyclerView.Adapter<EmployeeRVAdapter.Vi
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
 
-        final Employee mydata = myaaraylist.get(position);
+        final Vehicle vdata = vehicleList.get(position);
 
 
-        holder.name.setText("Employee Name: " + mydata.getName());
-        holder.id.setText("Employee ID: " + String.valueOf(mydata.getEmployeeId()));
+        holder.make.setText("Model: " + vdata.getModel());
+        holder.model.setText("Make: " + vdata.getMake());
+        holder.plate.setText("Plate: " + vdata.getPlate());
+        holder.type.setText("Vehicle type: " + vdata.getType());
+        if (vdata.isInsurance() == true)
+        {
+            holder.insurance.setText("Insurance True");
 
+        }
+        else
+        {
+            holder.insurance.setText("Insurance False");
+
+        }
+        holder.insurance.setText("Make: " + vdata.isInsurance());
         holder.mylAYOUT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myintent = new Intent(context, DetailsEmployeeActivity.class);
-                myintent.putExtra("empobject", mydata);
+                myintent.putExtra("vehicleObj", vdata);
                 context.startActivity(myintent);
 
             }
@@ -78,13 +90,15 @@ public class EmployeeRVAdapter extends RecyclerView.Adapter<EmployeeRVAdapter.Vi
 
     @Override
     public int getItemCount() {
-        return myaaraylist.size();
+        return vehicleList.size();
 
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView name, age, id;
+        TextView make, model;
+        TextView plate, insurance;
+        TextView type;
         LinearLayout mylAYOUT;
 
         public ViewHolder(@NonNull View itemView) {
@@ -92,10 +106,14 @@ public class EmployeeRVAdapter extends RecyclerView.Adapter<EmployeeRVAdapter.Vi
 
             super(itemView);
 
-            mylAYOUT = itemView.findViewById(R.id.parent_layout);
+            mylAYOUT = itemView.findViewById(R.id.vehicle_layout);
 
-            id = itemView.findViewById(R.id.vmodel);
-            name = itemView.findViewById(R.id.vmake);
+            model = itemView.findViewById(R.id.vmodel);
+            make = itemView.findViewById(R.id.vmake);
+            plate = itemView.findViewById(R.id.vplae);
+            type = itemView.findViewById(R.id.vtype);
+            insurance = itemView.findViewById(R.id.vInsurance);
+
 
 
         }
