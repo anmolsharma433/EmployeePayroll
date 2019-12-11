@@ -9,7 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Addvehicle"></activity>
+        <activity android:name=".Android_Ui.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Addvehicle" />
         <activity android:name=".Android_Ui.DetailsEmployeeActivity" />
         <activity android:name=".Android_Ui.EmployeeListRecyclerView" />
         <activity
@@ -17,13 +24,11 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Android_Ui.LogIn"
-            android:label="LogIn">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:label="LogIn"></activity>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

@@ -36,7 +36,7 @@ public class LogIn extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        banner = findViewById(R.id.txtBanner);
+//        banner = findViewById(R.id.txtBanner);
         email = findViewById(R.id.etEmail);
         password = findViewById(R.id.etPassword);
         login = findViewById(R.id.btnLogin);

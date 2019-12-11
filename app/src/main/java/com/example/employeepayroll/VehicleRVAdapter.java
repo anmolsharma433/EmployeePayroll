@@ -65,12 +65,12 @@ public class VehicleRVAdapter extends RecyclerView.Adapter<VehicleRVAdapter.View
         holder.type.setText("Vehicle type: " + vdata.getType());
         if (vdata.isInsurance() == true)
         {
-            holder.insurance.setText("Insurance True");
+            holder.insurance.setText(R.string.have_insurance);
 
         }
         else
         {
-            holder.insurance.setText("Insurance False");
+            holder.insurance.setText(R.string.no_insurance);
 
         }
         holder.insurance.setText("Make: " + vdata.isInsurance());
