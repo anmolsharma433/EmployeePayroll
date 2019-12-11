@@ -15,13 +15,13 @@ public class Addvehicle extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Employee empforvehicle = getIntent().getParcelableExtra("custvehicleobject")
+        Employee empforvehicle = getIntent().getParcelableExtra("custvehicleobject");
 
-
-        setContentView(R.layout.activity_addvehicle);
-        model = findViewById(R.id.vehiclemodel);
-        type = findViewById(R.id.vehicleType);
-        palte = findViewById(R.id.vehicleplate);
+//
+//        setContentView(R.layout.activity_addvehicle);
+//        model = findViewById(R.id.vehiclemodel);
+//        type = findViewById(R.id.vehicleType);
+//        palte = findViewById(R.id.vehicleplate);
 
         String vmodel = String.valueOf(model.getText());
         String vtype = String.valueOf(type.getText());
@@ -35,8 +35,8 @@ public class Addvehicle extends AppCompatActivity {
 
         empforvehicle.setmyVehicle(vehicle);
 
-
-        employee.setmyVehicle();
+//
+//        employee.setmyVehicle();
 
 
 
