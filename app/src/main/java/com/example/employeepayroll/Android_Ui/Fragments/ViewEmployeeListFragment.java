@@ -90,7 +90,6 @@ initRecycleView();
         ArrayList<Employee> mylist = myobj.getEmployees();
         EmployeeRVAdapter employeeRVAdapter = new EmployeeRVAdapter(getActivity());
         employeeRVAdapter.setMyaaraylist(mylist);
-        employeeRVAdapter.notifyDataSetChanged();
         recyclerView.setAdapter(employeeRVAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 

@@ -9,7 +9,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class Intern extends Employee implements Parcelable {
+public class Intern extends Employee  {
 
     // create variables for stroing values
     @SerializedName("schoolName")
@@ -19,9 +19,14 @@ public class Intern extends Employee implements Parcelable {
     //constructor to get values
 
 
+    public Intern(Parcel in, String schoolName) {
+        super(in);
+        this.schoolName = schoolName;
+    }
+
     public  Intern()
     {
-
+        System.out.println("in intern class" +schoolName);
     }
 
     public Intern(int employeeId, String name, int age, String type, String schoolName) {

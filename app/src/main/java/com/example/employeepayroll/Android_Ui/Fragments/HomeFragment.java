@@ -23,7 +23,7 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home,container,false);
-        Singleton singleton = new Singleton();
+        Singleton singleton = Singleton.getInstance();
         empCount = view.findViewById(R.id.empCount);
         dateAndTime = view.findViewById(R.id.textdateandtime);
         empCount.setText(String.valueOf(singleton.returnCount()));

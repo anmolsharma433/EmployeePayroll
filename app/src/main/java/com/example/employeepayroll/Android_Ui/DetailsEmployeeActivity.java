@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.employeepayroll.Addvehicle;
 import com.example.employeepayroll.Employee_Classes.Employee;
 import com.example.employeepayroll.Employee_Classes.EmployeeType_partTime.CommisionBasedPartTime;
 import com.example.employeepayroll.Employee_Classes.EmployeeType_partTime.FixedBasedPartTime;
@@ -169,8 +170,8 @@ public class DetailsEmployeeActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         //add intent for add vehicle
-        //Intent intent = new Intent(DetailsEmployeeActivity.this,AddVehicleActivity.class);
-       // startActivity(intent);
+        Intent intent = new Intent(DetailsEmployeeActivity.this, Addvehicle.class);
+        startActivity(intent);
         return super.onOptionsItemSelected(item);
     }
 }

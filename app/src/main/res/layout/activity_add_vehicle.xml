@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Android_Ui.AddVehicleActivity">
-
+    tools:context=".Addvehicle">
+    <ScrollView android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
 
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/colorAccent"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -52,7 +54,7 @@
 
 
                 <EditText
-                    android:id="@+id/editTextVehiclePlate"
+                    android:id="@+id/vehicleplate"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:singleLine="true"
@@ -94,7 +96,7 @@
 
 
                 <EditText
-                    android:id="@+id/editTextVehicleType"
+                    android:id="@+id/vehicletype"
                     android:focusable="false"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -145,7 +147,7 @@
                 <EditText
 
 
-                    android:id="@+id/editTextVehicleMake"
+                    android:id="@+id/vehiclemake"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:singleLine="true"
@@ -192,7 +194,7 @@
 
 
                 <EditText
-                    android:id="@+id/editTextVehicleModel"
+                    android:id="@+id/vehiclemodel"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:singleLine="true"
@@ -229,5 +231,6 @@
 
 
     </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
