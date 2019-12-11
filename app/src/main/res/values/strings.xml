@@ -9,4 +9,9 @@
     <string name="dm">Enable Dark Mode</string>
     <string name="navigation_drawer_open"> open navigation drawer</string>
     <string name="navigation_drawer_close"> close navigation drawer</string>
+    <string-array name="vehicletype">
+        <item>Select Vehicle</item>
+        <item>Car</item>
+        <item>Motorcycle</item>
+    </string-array>
 </resources>

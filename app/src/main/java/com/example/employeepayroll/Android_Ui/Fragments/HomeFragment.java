@@ -26,6 +26,13 @@ public class HomeFragment extends Fragment {
         Singleton singleton = Singleton.getInstance();
         empCount = view.findViewById(R.id.empCount);
         dateAndTime = view.findViewById(R.id.textdateandtime);
+
+        if(singleton.getEmployees() == null) {
+
+
+            singleton.create();
+
+        }
         empCount.setText(String.valueOf(singleton.returnCount()));
 
         Calendar c = Calendar.getInstance();

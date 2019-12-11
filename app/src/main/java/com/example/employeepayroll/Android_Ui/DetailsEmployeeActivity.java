@@ -27,13 +27,15 @@ import com.example.employeepayroll.R;
 import com.example.employeepayroll.VehicleRVAdapter;
 import com.example.employeepayroll.Vehicle_Classes.Vehicle;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DetailsEmployeeActivity extends AppCompatActivity {
     TextView empid, empname, empage, emptype, detailtext;
     LinearLayout intern,fulltime,parttime;
-
+    private List<Employee> myaaraylist;
+//    final Employee mydata = myaaraylist.get();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -164,7 +166,10 @@ public class DetailsEmployeeActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         //add intent for add vehicle
+        Employee myemp = (Employee) getIntent().getSerializableExtra("empobject");
+
         Intent intent = new Intent(DetailsEmployeeActivity.this, Addvehicle.class);
+        intent.putExtra("empobject1",(Serializable) myemp );
         startActivity(intent);
         return super.onOptionsItemSelected(item);
     }

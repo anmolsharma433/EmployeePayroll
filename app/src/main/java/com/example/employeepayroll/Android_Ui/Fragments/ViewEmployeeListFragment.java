@@ -83,9 +83,12 @@ initRecycleView();
 
     private  void initRecycleView()
     {
+        if(myobj.getEmployees() == null) {
 
-        myobj.create();
 
+            myobj.create();
+
+        }
         RecyclerView recyclerView = getView().findViewById(R.id.employee_rv);
         ArrayList<Employee> mylist = myobj.getEmployees();
         EmployeeRVAdapter employeeRVAdapter = new EmployeeRVAdapter(getActivity());
