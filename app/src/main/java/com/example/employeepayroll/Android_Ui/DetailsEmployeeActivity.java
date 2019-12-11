@@ -166,8 +166,9 @@ public class DetailsEmployeeActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Intent intent = new Intent(DetailsEmployeeActivity.this,AddVehicleActivity.class);
-        startActivity(intent);
+        //add intent for add vehicle
+        //Intent intent = new Intent(DetailsEmployeeActivity.this,AddVehicleActivity.class);
+       // startActivity(intent);
         return super.onOptionsItemSelected(item);
     }
 }
