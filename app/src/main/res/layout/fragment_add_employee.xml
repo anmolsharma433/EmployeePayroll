@@ -139,30 +139,61 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
                     android:hint="Rate" />
+                <LinearLayout
+                    android:id="@+id/linear_partTime_check"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioGroup
+                        android:id="@+id/part_Time_check"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <RadioButton
+                            android:id="@+id/rbfixed_Based"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fixed Based"/>
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:id="@+id/rbcommission_Based"
+                            android:text="Commission Based"/>
 
-                <CheckBox
-                    android:id="@+id/chkFixedOrCommission"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:text="Check if you are fixed based part time employee" />
+
+                    </RadioGroup>
+                </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/linearFixedOrCommission"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                     <EditText
-                        android:id="@+id/edtCommissionPerOrFixedAmt"
+                        android:id="@+id/fixed_Based"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
-                        android:hint="Commission Percentage fixed amount" />
+                        android:hint="Enter fixed amount" />
+
+                    <EditText
+                        android:id="@+id/commission_Based"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:hint="Enter Commission Percentage"/>
                 </LinearLayout>
             </LinearLayout>
 
