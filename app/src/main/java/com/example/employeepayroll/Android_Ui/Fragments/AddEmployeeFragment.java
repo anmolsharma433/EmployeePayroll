@@ -20,7 +20,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.employeepayroll.Android_Ui.Singleton;
+import com.example.employeepayroll.Employee_Classes.EmployeeType_partTime.CommisionBasedPartTime;
+import com.example.employeepayroll.Employee_Classes.EmployeeType_partTime.FixedBasedPartTime;
 import com.example.employeepayroll.Employee_Classes.EmployeeType_partTime.PartTime;
+import com.example.employeepayroll.Employee_Classes.Employee_PartTime.FullTime;
+import com.example.employeepayroll.Employee_Classes.Employee_PartTime.Intern;
 import com.example.employeepayroll.R;
 
 public class AddEmployeeFragment extends Fragment {
@@ -119,16 +123,33 @@ public class AddEmployeeFragment extends Fragment {
         final String empAge = String.valueOf(Age.getText());
         final String empHours = String.valueOf(hoursworked.getText());
         final String emprate = String.valueOf(rate.getText());
-        String empschool = String.valueOf(school.getText());
-        String empsalary = String.valueOf(salary.getText());
-        String empbonus = String.valueOf(bonus.getText());
+        final String empschool = String.valueOf(school.getText());
+        final String empsalary = String.valueOf(salary.getText());
+        final String empbonus = String.valueOf(bonus.getText());
+        final String empFixedBased = String.valueOf(fixedBased.getText());
+        final String empCommissionBased = String.valueOf(commissionBased);
 
         savePayroll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(empType == "Part Time")
+                if(empType == "Fixed Based")
                 {
-
+                    FixedBasedPartTime  fixedBasedPartTime = new FixedBasedPartTime(Integer.parseInt(empid),empname,Integer.parseInt(empAge),empType,Float.parseFloat(emprate),Integer.parseInt(empHours),Integer.parseInt(empFixedBased));
+                    Singleton.getInstance().addEmployee(fixedBasedPartTime);
+                }
+                else if(empType == "Commission Based")
+                {
+                    CommisionBasedPartTime commisionBasedPartTime = new CommisionBasedPartTime(Integer.parseInt(empid),empname,Integer.parseInt(empAge),empType,Float.parseFloat(emprate),Integer.parseInt(empHours),Integer.parseInt(empCommissionBased));
+                    Singleton.getInstance().addEmployee(commisionBasedPartTime);
+                }
+                else if(empType == "Intern")
+                {
+                    Intern intern = new Intern(Integer.parseInt(empid),empname,Integer.parseInt(empAge),empType,empschool);
+                    Singleton.getInstance().addEmployee(intern);
+                }
+                else if(empType == "Full Time"){
+                    FullTime fullTime = new FullTime(Integer.parseInt(empid),empname,Integer.parseInt(empAge),empType,Integer.parseInt(empsalary),Integer.parseInt(empbonus));
+                    Singleton.getInstance().addEmployee(fullTime);
                 }
             }
         });
